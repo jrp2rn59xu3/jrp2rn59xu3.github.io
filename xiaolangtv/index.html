@@ -1,0 +1,1063 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>小蓝gtv官网-蓝光高清播放器使用指南</title>
+<meta name="description" content="小蓝gtv官网提供蓝光高清播放器的安装、投屏与字幕设置说明，整理版本更新记录、常见故障排查、设备兼容清单和实用播放技巧，帮助用户在家中稳定播放本地视频与大屏内容。">
+<meta name="keywords" content="小蓝gtv官网">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230d2a52'/%3E%3Cpath d='M20 18h18a10 10 0 0 1 0 20H20z' fill='%234dabf7'/%3E%3Cpath d='M20 40h14l10 8H20z' fill='%23ffd43b'/%3E%3C/svg%3E">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "小蓝gtv官网",
+  "description": "蓝光高清播放器的安装、投屏、字幕设置与版本更新说明",
+  "inLanguage": "zh-CN"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "蓝光原盘播放器在电视盒子卡顿怎么处理",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "先确认码率，80Mbps 以上的片源需要千兆局域网与支持硬件解码的芯片。盒子仅有百兆网口时改用移动硬盘直连，卡顿多数消失。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "HDR10 片源在普通电视上偏灰怎么办",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "电视不支持 HDR 时播放器会做色调映射，把输出改为 SDR 并在画面设置里选择 BT.709 色域，偏灰现象会减轻。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "播放器字幕外挂加载失败的常见原因",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "字幕文件与视频同名但扩展名大小写不一致、编码为 GBK 未识别、ASS 特效字幕缺少字体，这三种情况最常见，逐一替换即可定位。"
+      }
+    }
+  ]
+}
+</script>
+<style>
+:root{
+  --blue-900:#0d2a52;
+  --blue-700:#12457f;
+  --blue-500:#1f6fd0;
+  --blue-300:#4dabf7;
+  --blue-050:#eef5fd;
+  --amber-500:#e8a020;
+  --amber-050:#fdf4e0;
+  --ink-900:#16202e;
+  --ink-700:#33445c;
+  --ink-500:#5d6f86;
+  --ink-300:#93a3b7;
+  --line:#dbe4ef;
+  --paper:#f6f9fd;
+  --white:#ffffff;
+  --radius-s:6px;
+  --radius-m:10px;
+  --radius-l:16px;
+  --shadow-s:0 1px 2px rgba(13,42,82,.06),0 1px 6px rgba(13,42,82,.05);
+  --shadow-m:0 4px 14px rgba(13,42,82,.10);
+  --sp-1:4px;--sp-2:8px;--sp-3:12px;--sp-4:16px;--sp-5:24px;--sp-6:32px;--sp-7:48px;--sp-8:64px;
+  --font-sans:"PingFang SC","Hiragino Sans GB","Microsoft YaHei",system-ui,-apple-system,sans-serif;
+  --topbar-h:38px;
+  --header-h:62px;
+}
+*{box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{
+  margin:0;
+  font-family:var(--font-sans);
+  color:var(--ink-900);
+  background:var(--paper);
+  line-height:1.75;
+  font-size:16px;
+  -webkit-font-smoothing:antialiased;
+}
+h1,h2,h3,h4{line-height:1.35;margin:0;font-weight:700;letter-spacing:.2px;}
+p{margin:0 0 var(--sp-3);}
+a{color:var(--blue-700);text-decoration:none;}
+a:hover{text-decoration:underline;}
+ul,ol{margin:0 0 var(--sp-3);padding-left:1.3em;}
+li{margin-bottom:6px;}
+img{max-width:100%;}
+:focus-visible{outline:3px solid var(--amber-500);outline-offset:2px;border-radius:4px;}
+[id]{scroll-margin-top:calc(var(--topbar-h) + var(--header-h) + 12px);}
+
+/* ---------- 吸顶条 ---------- */
+.topbar{
+  position:sticky;top:0;z-index:60;
+  height:var(--topbar-h);
+  background:var(--blue-900);
+  color:#dbe9fa;
+  font-size:13px;
+  display:flex;align-items:center;
+  overflow:hidden;
+}
+.topbar-in{
+  max-width:1200px;margin:0 auto;padding:0 var(--sp-4);
+  display:flex;align-items:center;gap:var(--sp-3);
+  white-space:nowrap;overflow:hidden;text-overflow:ellipsis;
+  width:100%;
+}
+.topbar-badge{
+  background:var(--amber-500);color:#3a2600;
+  border-radius:999px;padding:1px 9px;font-weight:700;font-size:12px;flex:none;
+}
+.topbar a{color:#fff;font-weight:600;}
+
+/* ---------- 页头 ---------- */
+.header{
+  position:sticky;top:var(--topbar-h);z-index:55;
+  background:rgba(255,255,255,.94);
+  backdrop-filter:blur(8px);
+  border-bottom:1px solid var(--line);
+  height:var(--header-h);
+}
+.header-in{
+  max-width:1200px;margin:0 auto;height:100%;padding:0 var(--sp-4);
+  display:flex;align-items:center;gap:var(--sp-4);
+}
+.brand{display:flex;align-items:center;gap:10px;flex:none;text-decoration:none;color:var(--ink-900);}
+.brand:hover{text-decoration:none;}
+.brand-mark{width:36px;height:36px;flex:none;}
+.brand-name{font-size:19px;font-weight:800;letter-spacing:.5px;}
+.brand-name span{color:var(--blue-500);}
+.nav{margin-left:auto;display:flex;align-items:center;gap:2px;}
+.nav a{
+  font-size:14.5px;color:var(--ink-700);padding:7px 11px;border-radius:var(--radius-s);
+  font-weight:500;white-space:nowrap;
+}
+.nav a:hover{background:var(--blue-050);color:var(--blue-700);text-decoration:none;}
+.nav .cta{
+  background:var(--blue-500);color:#fff;font-weight:600;margin-left:6px;
+}
+.nav .cta:hover{background:var(--blue-700);color:#fff;}
+.menu-btn{
+  display:none;margin-left:auto;
+  background:var(--white);border:1px solid var(--line);border-radius:var(--radius-s);
+  padding:7px 10px;cursor:pointer;font-size:14px;color:var(--ink-700);
+  align-items:center;gap:6px;font-family:inherit;
+}
+.menu-btn svg{width:16px;height:16px;}
+
+/* ---------- 首屏 ---------- */
+.hero{
+  position:relative;overflow:hidden;
+  background:
+    radial-gradient(circle at 82% 18%,rgba(77,171,247,.28),transparent 46%),
+    radial-gradient(circle at 12% 92%,rgba(232,160,32,.16),transparent 44%),
+    linear-gradient(160deg,#0a1f3d 0%,#0d2a52 46%,#12457f 100%);
+  color:#e8f1fc;
+}
+.hero-in{
+  max-width:1200px;margin:0 auto;padding:var(--sp-8) var(--sp-4) var(--sp-7);
+  display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);
+  gap:var(--sp-7);align-items:center;
+}
+.hero-eyebrow{
+  display:inline-flex;align-items:center;gap:8px;
+  font-size:13px;letter-spacing:1.5px;color:var(--blue-300);
+  border:1px solid rgba(77,171,247,.45);border-radius:999px;padding:3px 14px;
+  margin-bottom:var(--sp-4);font-weight:600;
+}
+.hero h1{
+  font-size:clamp(30px,4.4vw,46px);
+  letter-spacing:1px;color:#fff;margin-bottom:var(--sp-4);
+}
+.hero h1 em{font-style:normal;color:var(--amber-500);}
+.hero-desc{font-size:16.5px;color:#c3d8ee;max-width:34em;margin-bottom:var(--sp-5);}
+.hero-actions{display:flex;flex-wrap:wrap;gap:var(--sp-3);margin-bottom:var(--sp-5);}
+.btn{
+  display:inline-flex;align-items:center;gap:8px;
+  padding:11px 22px;border-radius:999px;font-size:15px;font-weight:700;
+  border:1px solid transparent;cursor:pointer;transition:transform .15s ease,background .15s ease;
+  font-family:inherit;
+}
+.btn:hover{transform:translateY(-2px);text-decoration:none;}
+.btn-primary{background:var(--amber-500);color:#2e1f00;}
+.btn-primary:hover{background:#f2b33c;}
+.btn-ghost{background:transparent;color:#dbe9fa;border-color:rgba(219,233,250,.45);}
+.btn-ghost:hover{border-color:#fff;color:#fff;}
+.hero-stats{display:flex;gap:var(--sp-5);flex-wrap:wrap;border-top:1px solid rgba(219,233,250,.2);padding-top:var(--sp-4);}
+.hero-stats div strong{display:block;font-size:22px;color:#fff;font-weight:800;}
+.hero-stats div span{font-size:12.5px;color:#9dbad9;letter-spacing:.5px;}
+.hero-visual{position:relative;height:330px;}
+.hero-visual svg{width:100%;height:100%;display:block;}
+.hero-chip{
+  position:absolute;background:rgba(255,255,255,.10);
+  border:1px solid rgba(219,233,250,.28);border-radius:var(--radius-m);
+  padding:10px 14px;font-size:13px;color:#e8f1fc;backdrop-filter:blur(4px);
+  box-shadow:var(--shadow-m);
+}
+.hero-chip b{color:var(--amber-500);font-size:15px;}
+.chip-a{top:8px;right:4px;}
+.chip-b{bottom:14px;left:0;}
+.chip-c{bottom:96px;right:14px;}
+
+/* ---------- 通用容器 ---------- */
+.wrap{max-width:1200px;margin:0 auto;padding:0 var(--sp-4);}
+.layout{
+  max-width:1200px;margin:0 auto;padding:var(--sp-7) var(--sp-4) var(--sp-8);
+  display:grid;grid-template-columns:minmax(0,1fr) 300px;gap:var(--sp-6);
+  align-items:start;
+}
+.main-col{min-width:0;}
+.side-col{min-width:0;position:sticky;top:calc(var(--topbar-h) + var(--header-h) + 16px);}
+
+.section{margin-bottom:var(--sp-8);}
+.sec-head{display:flex;align-items:baseline;gap:var(--sp-3);flex-wrap:wrap;margin-bottom:var(--sp-4);border-bottom:2px solid var(--line);padding-bottom:var(--sp-2);}
+.sec-head h2{font-size:23px;color:var(--blue-900);}
+.sec-head .hint{font-size:13px;color:var(--ink-500);}
+.sec-head h2::before{
+  content:"";display:inline-block;width:5px;height:19px;background:var(--amber-500);
+  border-radius:3px;margin-right:10px;vertical-align:-2px;
+}
+
+/* ---------- 概览 ---------- */
+.overview-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:var(--sp-4);}
+.ov-card{
+  background:var(--white);border:1px solid var(--line);border-radius:var(--radius-m);
+  padding:var(--sp-4);box-shadow:var(--shadow-s);
+}
+.ov-card h3{font-size:16px;color:var(--blue-900);margin-bottom:6px;}
+.ov-card p{font-size:14px;color:var(--ink-700);margin:0;}
+.ov-num{font-size:13px;font-weight:800;color:var(--blue-500);letter-spacing:1px;display:block;margin-bottom:6px;}
+
+/* ---------- 精选 ---------- */
+.pick-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:var(--sp-4);}
+.pick{
+  display:flex;gap:var(--sp-3);background:var(--white);border:1px solid var(--line);
+  border-radius:var(--radius-m);overflow:hidden;box-shadow:var(--shadow-s);
+  transition:transform .15s ease,box-shadow .15s ease;
+}
+.pick:hover{transform:translateY(-3px);box-shadow:var(--shadow-m);}
+.pick img{width:118px;height:112px;object-fit:cover;flex:none;background:var(--blue-050);}
+.pick-body{padding:var(--sp-3) var(--sp-3) var(--sp-3) 0;min-width:0;}
+.pick-body h3{font-size:15.5px;margin-bottom:4px;color:var(--ink-900);}
+.pick-body p{font-size:13.5px;color:var(--ink-500);margin:0;}
+.pick-tag{display:inline-block;font-size:11.5px;background:var(--blue-050);color:var(--blue-700);border-radius:4px;padding:1px 7px;margin-bottom:6px;font-weight:600;}
+
+/* ---------- 最新更新 列表 ---------- */
+.updates{background:var(--white);border:1px solid var(--line);border-radius:var(--radius-m);overflow:hidden;}
+.upd{display:grid;grid-template-columns:88px minmax(0,1fr);gap:var(--sp-3);padding:13px var(--sp-4);border-bottom:1px dashed var(--line);font-size:14.5px;}
+.upd:last-child{border-bottom:none;}
+.upd time{color:var(--blue-500);font-weight:700;font-size:13px;font-variant-numeric:tabular-nums;}
+.upd span{color:var(--ink-700);}
+.upd span b{color:var(--ink-900);}
+
+/* ---------- 分类入口 ---------- */
+.cat-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:var(--sp-3);}
+.cat{
+  display:block;background:var(--white);border:1px solid var(--line);border-radius:var(--radius-m);
+  padding:14px 13px;color:var(--ink-900);box-shadow:var(--shadow-s);
+}
+.cat:hover{text-decoration:none;border-color:var(--blue-300);background:var(--blue-050);}
+.cat strong{display:block;font-size:14.5px;margin-bottom:2px;}
+.cat small{color:var(--ink-500);font-size:12px;}
+
+/* ---------- 深度解析 ---------- */
+.article{
+  background:var(--white);border:1px solid var(--line);border-radius:var(--radius-l);
+  padding:var(--sp-6);box-shadow:var(--shadow-s);
+}
+.article .lead{font-size:16px;color:var(--ink-700);}
+.article h3{font-size:18px;color:var(--blue-900);margin:var(--sp-5) 0 var(--sp-3);}
+.article h3:first-of-type{margin-top:var(--sp-4);}
+.article p{font-size:15.2px;color:var(--ink-700);}
+.article ul{font-size:15px;color:var(--ink-700);}
+.quote{
+  border-left:4px solid var(--amber-500);background:var(--amber-050);
+  padding:12px var(--sp-4);border-radius:0 var(--radius-s) var(--radius-s) 0;
+  font-size:14.5px;color:#5a4210;margin:var(--sp-4) 0;
+}
+.cmp{display:grid;grid-template-columns:1fr 1fr;gap:0;border:1px solid var(--line);border-radius:var(--radius-m);overflow:hidden;margin:var(--sp-4) 0;font-size:14px;}
+.cmp>div{padding:12px 14px;background:var(--white);}
+.cmp>div:first-child{border-right:1px solid var(--line);background:var(--blue-050);}
+.cmp h4{font-size:14px;margin:0 0 6px;color:var(--blue-900);}
+.cmp ul{margin:0;padding-left:1.1em;color:var(--ink-700);}
+.checklist{list-style:none;padding:0;margin:var(--sp-3) 0;}
+.checklist li{padding-left:26px;position:relative;font-size:14.6px;color:var(--ink-700);}
+.checklist li::before{
+  content:"✓";position:absolute;left:0;top:0;color:var(--blue-500);font-weight:800;
+}
+
+/* ---------- 体验指南 步骤 ---------- */
+.steps{counter-reset:step;list-style:none;padding:0;margin:0;display:grid;gap:var(--sp-3);}
+.steps li{
+  counter-increment:step;background:var(--white);border:1px solid var(--line);
+  border-radius:var(--radius-m);padding:14px var(--sp-4) 14px 58px;position:relative;
+  font-size:14.6px;color:var(--ink-700);margin:0;
+}
+.steps li::before{
+  content:counter(step);position:absolute;left:14px;top:13px;
+  width:28px;height:28px;border-radius:50%;background:var(--blue-500);color:#fff;
+  display:flex;align-items:center;justify-content:center;font-weight:800;font-size:14px;
+}
+.steps li b{color:var(--ink-900);}
+
+/* ---------- FAQ ---------- */
+.faq details{
+  background:var(--white);border:1px solid var(--line);border-radius:var(--radius-m);
+  margin-bottom:var(--sp-2);overflow:hidden;
+}
+.faq summary{
+  cursor:pointer;padding:13px var(--sp-4);font-weight:600;font-size:15px;color:var(--ink-900);
+  list-style:none;position:relative;padding-right:42px;
+}
+.faq summary::-webkit-details-marker{display:none;}
+.faq summary::after{
+  content:"+";position:absolute;right:16px;top:11px;font-size:18px;color:var(--blue-500);font-weight:700;
+}
+.faq details[open] summary::after{content:"–";}
+.faq details[open] summary{border-bottom:1px solid var(--line);background:var(--blue-050);}
+.faq .ans{padding:12px var(--sp-4);font-size:14.4px;color:var(--ink-700);}
+.faq .ans p{margin:0 0 8px;}
+.faq .ans p:last-child{margin:0;}
+
+/* ---------- 评论 ---------- */
+.cmt-list{display:grid;gap:var(--sp-3);}
+.cmt{
+  background:var(--white);border:1px solid var(--line);border-left:3px solid var(--blue-300);
+  border-radius:var(--radius-s);padding:12px var(--sp-4);
+}
+.cmt-top{display:flex;align-items:center;gap:10px;margin-bottom:5px;}
+.avatar{
+  width:30px;height:30px;border-radius:50%;flex:none;background:var(--blue-700);color:#fff;
+  display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:700;
+}
+.cmt-top b{font-size:14px;color:var(--ink-900);}
+.cmt-top .meta{font-size:12px;color:var(--ink-300);margin-left:auto;}
+.cmt p{margin:0;font-size:14.2px;color:var(--ink-700);}
+.cmt.mid{border-left-color:var(--ink-300);}
+.cmt.neutral{border-left-color:var(--amber-500);}
+
+/* ---------- 时间线 ---------- */
+.timeline{list-style:none;padding:0;margin:0;border-left:2px solid var(--line);}
+.timeline li{position:relative;padding:0 0 var(--sp-4) var(--sp-5);margin:0;}
+.timeline li::before{
+  content:"";position:absolute;left:-7px;top:5px;width:12px;height:12px;border-radius:50%;
+  background:var(--white);border:2px solid var(--blue-500);
+}
+.timeline b{display:block;font-size:14.6px;color:var(--ink-900);}
+.timeline time{font-size:12.5px;color:var(--blue-500);font-weight:700;}
+.timeline span{font-size:13.8px;color:var(--ink-700);}
+
+/* ---------- 标签 ---------- */
+.tags{display:flex;flex-wrap:wrap;gap:var(--sp-2);}
+.tags a{
+  font-size:13.5px;background:var(--white);border:1px solid var(--line);
+  border-radius:999px;padding:5px 14px;color:var(--ink-700);
+}
+.tags a:hover{background:var(--blue-050);border-color:var(--blue-300);color:var(--blue-700);text-decoration:none;}
+
+/* ---------- 资讯 ---------- */
+.news-list{display:grid;gap:var(--sp-2);}
+.news-item{
+  display:flex;gap:var(--sp-3);align-items:baseline;background:var(--white);
+  border:1px solid var(--line);border-radius:var(--radius-s);padding:11px var(--sp-4);
+  font-size:14.4px;
+}
+.news-item time{color:var(--ink-300);font-size:12.5px;flex:none;font-variant-numeric:tabular-nums;}
+.news-item a{color:var(--ink-900);font-weight:600;}
+.news-item a:hover{color:var(--blue-700);}
+.news-item small{color:var(--ink-500);}
+
+/* ---------- 侧栏 ---------- */
+.side-card{
+  background:var(--white);border:1px solid var(--line);border-radius:var(--radius-m);
+  padding:var(--sp-4);margin-bottom:var(--sp-4);box-shadow:var(--shadow-s);
+}
+.side-card h3{font-size:15px;color:var(--blue-900);margin-bottom:var(--sp-3);padding-bottom:8px;border-bottom:1px solid var(--line);}
+.side-nav a{
+  display:block;font-size:14px;color:var(--ink-700);padding:7px 10px;border-radius:var(--radius-s);
+  border-left:3px solid transparent;margin-bottom:2px;
+}
+.side-nav a:hover{background:var(--blue-050);text-decoration:none;}
+.side-nav a.on{background:var(--blue-050);color:var(--blue-700);font-weight:700;border-left-color:var(--blue-500);}
+.search-box{display:flex;gap:6px;}
+.search-box input{
+  flex:1;min-width:0;padding:9px 11px;border:1px solid var(--line);border-radius:var(--radius-s);
+  font-size:14px;font-family:inherit;color:var(--ink-900);background:var(--paper);
+}
+.search-box button{
+  padding:9px 14px;border:none;border-radius:var(--radius-s);background:var(--blue-500);
+  color:#fff;font-weight:700;font-size:14px;cursor:pointer;font-family:inherit;
+}
+.search-box button:hover{background:var(--blue-700);}
+#searchResult{font-size:13.2px;color:var(--ink-500);margin-top:8px;min-height:1em;}
+#searchResult b{color:var(--blue-700);}
+.side-rank ol{padding-left:1.2em;margin:0;font-size:14px;color:var(--ink-700);}
+.side-rank li{margin-bottom:8px;}
+.side-rank a{color:var(--ink-900);font-weight:600;}
+.side-rank em{font-style:normal;color:var(--ink-300);font-size:12px;display:block;}
+.tip-card{background:var(--blue-050);border:1px dashed var(--blue-300);}
+.tip-card p{font-size:13.6px;color:var(--blue-900);margin:0;}
+
+/* ---------- 回顶 ---------- */
+#toTop{
+  position:fixed;right:18px;bottom:22px;z-index:40;
+  width:44px;height:44px;border-radius:50%;border:none;cursor:pointer;
+  background:var(--blue-700);color:#fff;box-shadow:var(--shadow-m);
+  display:none;align-items:center;justify-content:center;
+}
+#toTop.show{display:flex;}
+#toTop:hover{background:var(--blue-500);}
+#toTop svg{width:18px;height:18px;}
+
+/* ---------- 页脚 ---------- */
+.footer{background:var(--blue-900);color:#b9d0ea;font-size:14px;padding:var(--sp-7) 0 var(--sp-5);}
+.footer-in{max-width:1200px;margin:0 auto;padding:0 var(--sp-4);}
+.footer-top{display:grid;grid-template-columns:1.2fr 2fr;gap:var(--sp-6);padding-bottom:var(--sp-5);border-bottom:1px solid rgba(185,208,234,.2);}
+.footer-brand{display:flex;align-items:center;gap:10px;color:#fff;font-size:19px;font-weight:800;margin-bottom:10px;}
+.footer-brand svg{width:32px;height:32px;flex:none;}
+.footer p{margin:0 0 8px;font-size:13.6px;color:#8fb0d2;}
+.footer-groups{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:var(--sp-4);}
+.footer-groups h4{font-size:14px;color:#fff;margin-bottom:10px;}
+.footer-groups a{display:block;color:#a8c4e0;font-size:13.4px;padding:2px 0;}
+.footer-groups a:hover{color:#fff;}
+.footer-bottom{padding-top:var(--sp-4);display:flex;flex-wrap:wrap;gap:var(--sp-3);justify-content:space-between;font-size:12.8px;color:#7a9cbe;}
+.footer-bottom span{color:#7a9cbe;}
+
+/* ---------- 响应式 ---------- */
+@media(max-width:960px){
+  .layout{grid-template-columns:minmax(0,1fr);padding-top:var(--sp-5);}
+  .side-col{position:static;order:2;}
+  .main-col{order:1;}
+  .hero-in{grid-template-columns:minmax(0,1fr);gap:var(--sp-5);padding:var(--sp-6) var(--sp-4) var(--sp-5);}
+  .hero-visual{height:280px;max-width:520px;}
+  .pick-grid{grid-template-columns:1fr;}
+  .cat-grid{grid-template-columns:repeat(3,minmax(0,1fr));}
+  .footer-top{grid-template-columns:1fr;}
+  .nav{
+    position:fixed;top:calc(var(--topbar-h) + var(--header-h));left:0;right:0;
+    background:var(--white);border-bottom:1px solid var(--line);
+    flex-direction:column;align-items:stretch;padding:10px var(--sp-4) 16px;
+    gap:2px;box-shadow:var(--shadow-m);
+    display:none;
+  }
+  .nav.open{display:flex;}
+  .nav a{padding:11px 12px;font-size:15px;}
+  .nav .cta{margin-left:0;text-align:center;}
+  .menu-btn{display:inline-flex;}
+  .footer-groups{grid-template-columns:repeat(2,minmax(0,1fr));}
+}
+@media(max-width:640px){
+  .overview-grid{grid-template-columns:1fr;}
+  .cat-grid{grid-template-columns:repeat(2,minmax(0,1fr));}
+  .cmp{grid-template-columns:1fr;}
+  .cmp>div:first-child{border-right:none;border-bottom:1px solid var(--line);}
+  .article{padding:var(--sp-4);}
+  .hero-stats{gap:var(--sp-4);}
+  .hero-stats div strong{font-size:19px;}
+  .upd{grid-template-columns:1fr;gap:2px;}
+  .pick{flex-direction:column;}
+  .pick img{width:100%;height:150px;}
+  .pick-body{padding:0 var(--sp-4) var(--sp-3);}
+  .news-item{flex-wrap:wrap;}
+  #toTop{right:12px;bottom:14px;width:40px;height:40px;}
+}
+@media(prefers-reduced-motion:reduce){
+  *{transition:none!important;animation:none!important;scroll-behavior:auto!important;}
+  .btn:hover,.pick:hover{transform:none;}
+}
+</style>
+<script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</head>
+<body>
+
+<!-- 吸顶公告条 -->
+<div class="topbar">
+  <div class="topbar-in">
+    <span class="topbar-badge">更新</span>
+    <span>11月6日发布 3.8.2 版：修复 HDR10 色调映射偏灰、投屏断连，新增 ASS 字幕字体回退。详情见 <a href="/#updates">版本动态</a>。</span>
+  </div>
+</div>
+
+<!-- 页头 -->
+<header class="header">
+  <div class="header-in">
+    <a class="brand" href="/#top" aria-label="小蓝gtv官网 首页">
+      <svg class="brand-mark" viewBox="0 0 64 64" role="img" aria-hidden="true">
+        <rect width="64" height="64" rx="14" fill="#0d2a52"/>
+        <path d="M18 16h17a11 11 0 0 1 0 22H18z" fill="#4dabf7"/>
+        <path d="M18 40h13l11 9H18z" fill="#ffd43b"/>
+        <circle cx="46" cy="18" r="4" fill="#e8a020"/>
+      </svg>
+      <span class="brand-name">小蓝<span>gtv</span>官网</span>
+    </a>
+    <button class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="mainNav">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+      菜单
+    </button>
+    <nav class="nav" id="mainNav" aria-label="主题导航">
+      <a href="/#overview">播放器概览</a>
+      <a href="/#picks">精选片源</a>
+      <a href="/#updates">版本动态</a>
+      <a href="/#cats">功能分类</a>
+      <a href="/#deep">深度解析</a>
+      <a href="/#faq">常见问题</a>
+      <a class="cta" href="/#guide">安装指南</a>
+    </nav>
+  </div>
+</header>
+
+<!-- 首屏 -->
+<section class="hero" id="top">
+  <div class="hero-in">
+    <div>
+      <span class="hero-eyebrow">LOCAL PLAYER · 4K HDR</span>
+      <h1>小蓝gtv官网<em>·</em>蓝光高清播放器</h1>
+      <p class="hero-desc">把本地 MKV、蓝光原盘和 HEVC 片源稳定播到电视大屏。这里整理 3.8.2 版的安装流程、硬件解码清单、字幕与投屏设置，以及能复现的故障排查步骤，适合把硬盘片库搬上客厅的人。</p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="/#guide">查看安装与配置步骤</a>
+        <a class="btn btn-ghost" href="/#deep">读深度解析</a>
+      </div>
+      <div class="hero-stats">
+        <div><strong>3.8.2</strong><span>当前版本 · 11月6日</span></div>
+        <div><strong>42</strong><span>机型兼容条目</span></div>
+        <div><strong>11</strong><span>故障排查场景</span></div>
+      </div>
+    </div>
+    <div class="hero-visual" aria-hidden="true">
+      <svg viewBox="0 0 480 330" role="img">
+        <defs>
+          <linearGradient id="lgA" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0" stop-color="#4dabf7" stop-opacity=".9"/>
+            <stop offset="1" stop-color="#1f6fd0" stop-opacity=".5"/>
+          </linearGradient>
+          <linearGradient id="lgB" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0" stop-color="#ffd43b" stop-opacity=".95"/>
+            <stop offset="1" stop-color="#e8a020" stop-opacity=".7"/>
+          </linearGradient>
+        </defs>
+        <rect x="26" y="38" width="330" height="200" rx="14" fill="url(#lgA)" opacity=".22" stroke="#4dabf7" stroke-opacity=".55"/>
+        <rect x="26" y="38" width="330" height="200" rx="14" fill="none" stroke="#4dabf7" stroke-opacity=".5"/>
+        <polygon points="170,102 170,178 236,140" fill="url(#lgB)"/>
+        <rect x="48" y="62" width="60" height="6" rx="3" fill="#c3d8ee" opacity=".55"/>
+        <rect x="48" y="76" width="104" height="6" rx="3" fill="#c3d8ee" opacity=".35"/>
+        <rect x="48" y="196" width="180" height="8" rx="4" fill="#c3d8ee" opacity=".3"/>
+        <rect x="48" y="196" width="112" height="8" rx="4" fill="#ffd43b"/>
+        <circle cx="160" cy="200" r="7" fill="#fff"/>
+        <rect x="222" y="176" width="112" height="50" rx="9" fill="#0a1f3d" stroke="#4dabf7" stroke-opacity=".4"/>
+        <rect x="236" y="188" width="46" height="6" rx="3" fill="#4dabf7"/>
+        <rect x="236" y="202" width="70" height="5" rx="2.5" fill="#7a9cbe"/>
+        <rect x="236" y="212" width="54" height="5" rx="2.5" fill="#7a9cbe"/>
+        <path d="M372 96l24 14v28l-24 14-24-14v-28z" fill="none" stroke="#e8a020" stroke-width="2.4"/>
+        <path d="M368 116l6 6 12-12" fill="none" stroke="#ffd43b" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M380 154v34" stroke="#4dabf7" stroke-opacity=".5" stroke-width="2" stroke-dasharray="4 5"/>
+        <circle cx="380" cy="198" r="5" fill="#4dabf7"/>
+      </svg>
+      <div class="hero-chip chip-a"><b>4K</b> HEVC 硬解</div>
+      <div class="hero-chip chip-b"><b>ASS</b> 特效字幕</div>
+      <div class="hero-chip chip-c"><b>DLNA</b> 投屏稳定版</div>
+    </div>
+  </div>
+</section>
+
+<!-- 主体 -->
+<div class="layout">
+  <main class="main-col">
+
+    <!-- 领域概览 -->
+    <section class="section" id="overview">
+      <div class="sec-head">
+        <h2>蓝光播放器领域概览</h2>
+        <span class="hint">先分清软解与硬解，再决定设备</span>
+      </div>
+      <div class="overview-grid">
+        <div class="ov-card">
+          <span class="ov-num">01 / 解码</span>
+          <h3>硬件解码与软解差别</h3>
+          <p>4K H.265 片源给到 CPU 软解，Amlogic S905X3 盒子常掉到 24 帧以下；支持 HEVC Main10 硬解的芯片可稳定 60 帧，功耗低约 40%。</p>
+        </div>
+        <div class="ov-card">
+          <span class="ov-num">02 / 片源</span>
+          <h3>蓝光原盘与 Remux</h3>
+          <p>原盘保留 BDMV 目录和菜单，单个文件常 40GB 起；Remux 只留正片，体积减三成，播放器读取更快，通吃型设备一般选 Remux。</p>
+        </div>
+        <div class="ov-card">
+          <span class="ov-num">03 / 传输</span>
+          <h3>千兆 NAS 与移动硬盘</h3>
+          <p>码率 80Mbps 以上建议千兆网口直连；百兆路由实际吞吐约 11MB/s，播 4K 原盘会周期性缓冲，本地 USB3.0 硬盘更稳。</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 精选内容 -->
+    <section class="section" id="picks">
+      <div class="sec-head">
+        <h2>本周精选片源与配置</h2>
+        <span class="hint">按播放难度挑选，逐条附实测设备</span>
+      </div>
+      <div class="pick-grid">
+        <article class="pick">
+          <img src="https://picsum.photos/seed/blueray4k/236/224" width="118" height="112" loading="lazy" alt="4K 蓝光原盘片段在电视上播放的画面" style="object-fit:cover;">
+          <div class="pick-body">
+            <span class="pick-tag">原盘测试</span>
+            <h3>《星际穿越》4K 原盘 · 86Mbps 码率</h3>
+            <p>芝杜 Z9X 直连千兆 NAS 全程无缓冲，同片源在百兆网口盒子每 4 分钟缓冲一次。</p>
+          </div>
+        </article>
+        <article class="pick">
+          <img src="https://picsum.photos/seed/subtitleass/236/224" width="118" height="112" loading="lazy" alt="ASS 特效字幕加载后的字幕样式" style="object-fit:cover;">
+          <div class="pick-body">
+            <span class="pick-tag">字幕方案</span>
+            <h3>ASS 特效字幕字体回退配置</h3>
+            <p>3.8.2 版新增字体回退，思源黑体缺失时自动换装系统字库，字幕不再空框。</p>
+          </div>
+        </article>
+        <article class="pick">
+          <img src="https://picsum.photos/seed/hdrmapping/236/224" width="118" height="112" loading="lazy" alt="HDR10 片源在 SDR 电视上的色调映射效果" style="object-fit:cover;">
+          <div class="pick-body">
+            <span class="pick-tag">画质调校</span>
+            <h3>HDR10 转 SDR 的 BT.709 设置</h3>
+            <p>老款 1080p 电视开启色调映射后，峰值亮度按 200nits 输出，暗部细节保留更多。</p>
+          </div>
+        </article>
+        <article class="pick">
+          <img src="https://picsum.photos/seed/dlnacast/236/224" width="118" height="112" loading="lazy" alt="手机投屏到电视的 DLNA 连接界面" style="object-fit:cover;">
+          <div class="pick-body">
+            <span class="pick-tag">投屏</span>
+            <h3>DLNA 投屏断连的三项排查</h3>
+            <p>路由器开启 AP 隔离、2.4G 与 5G 未同网段、播放器版本低于 3.8.1，是最常见原因。</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- 最新更新 -->
+    <section class="section" id="updates">
+      <div class="sec-head">
+        <h2>版本更新与功能动态</h2>
+        <span class="hint">时间以 2026 年 11 月 8 日为参照</span>
+      </div>
+      <div class="updates">
+        <div class="upd"><time>11月6日</time><span><b>3.8.2 正式版</b>：HDR10 色调映射曲线重写，投屏调度改为长连接，ASS 字幕加入字体回退。</span></div>
+        <div class="upd"><time>11月3日</time><span><b>3.8.1 热修</b>：修复部分海思芯片盒子在 4K 60Hz 下花屏，涉及型号 Hi3798MV200。</span></div>
+        <div class="upd"><time>10月30日</time><span><b>兼容清单更新</b>：新增索尼 X90L、TCL Q10G Pro、小米电视 S Pro 三款机型的硬解标记。</span></div>
+        <div class="upd"><time>10月26日</time><span><b>字幕社区反馈</b>：用户“南栀”提交 ASS 字体缺失案例 17 例，已在测试版复现 12 例。</span></div>
+        <div class="upd"><time>10月21日</time><span><b>3.8.0 公测</b>：新增章节书签，单部影片最多 20 个标记，支持导出 JSON。</span></div>
+      </div>
+    </section>
+
+    <!-- 分类入口 -->
+    <section class="section" id="cats">
+      <div class="sec-head">
+        <h2>功能分类入口</h2>
+        <span class="hint">按使用场景找对应设置</span>
+      </div>
+      <div class="cat-grid">
+        <a class="cat" href="/#guide"><strong>安装与首次启动</strong><small>权限、扫描、片库</small></a>
+        <a class="cat" href="/#deep"><strong>4K HDR 画质调校</strong><small>色调映射、色域</small></a>
+        <a class="cat" href="/#faq"><strong>字幕加载与编码</strong><small>ASS、SRT、GBK</small></a>
+        <a class="cat" href="/#picks"><strong>蓝光原盘播放</strong><small>BDMV、ISO、菜单</small></a>
+        <a class="cat" href="/#updates"><strong>版本更新记录</strong><small>3.8.x 变更</small></a>
+        <a class="cat" href="/#guide"><strong>手机投屏与 DLNA</strong><small>同网段、长连接</small></a>
+        <a class="cat" href="/#faq"><strong>音轨与解码输出</strong><small>DTS、TrueHD、直通</small></a>
+        <a class="cat" href="/#timeline"><strong>机型兼容清单</strong><small>42 款设备</small></a>
+      </div>
+    </section>
+
+    <!-- 深度解析 -->
+    <section class="section" id="deep">
+      <div class="sec-head">
+        <h2>深度解析：硬解优先还是软解兜底</h2>
+        <span class="hint">全页唯一主体阅读区</span>
+      </div>
+      <article class="article">
+        <p class="lead">先把判断亮出来：对 4K HEVC 片源，2023 年后上市的 Amlogic、瑞芯微芯片应优先硬解；对 1080p H.264 与老片修复内容，软解画质更稳，硬解反而在去噪上偏软。播放器不该默认“全部硬解”，应按分辨率与编码切换。</p>
+
+        <h3>案例时间线：一次 4K 掉帧的定位过程</h3>
+        <p>10月28日，用户“老K”在芝杜 Z9X 上播放《沙丘2》4K Remux，42 分钟处连续掉帧。第一步看码率曲线，峰值冲到 92Mbps；第二步换移动硬盘直连，掉帧消失；第三步把 NAS 从百兆口换到千兆口，问题同样消失。结论落在网络吞吐而非解码能力。同类案例在 10月31日“阿澈”的小米盒子 4S 上复现，但换硬盘无效，最终定位是芯片仅支持 HEVC Main 8bit，片源为 Main10，只能软解。</p>
+
+        <div class="cmp">
+          <div>
+            <h4>硬解优先的适用条件</h4>
+            <ul>
+              <li>片源 4K 且编码为 HEVC Main10</li>
+              <li>芯片为 S905X4、RK3588 级别</li>
+              <li>输出 60Hz，功耗预算有限</li>
+              <li>片库以 Remux 为主</li>
+            </ul>
+          </div>
+          <div>
+            <h4>软解兜底的适用条件</h4>
+            <ul>
+              <li>1080p H.264 老片与动画</li>
+              <li>需要定制去噪与锐化</li>
+              <li>芯片硬解存在花屏记录</li>
+              <li>片源含复杂 ASS 特效字幕</li>
+            </ul>
+          </div>
+        </div>
+
+        <h3>数据对比：两种模式下可核对的三项指标</h3>
+        <p>同一台 Amlogic S905X3 盒子、同一部 4K HEVC 片源，两组数据来自 11月2日与 11月4日的两次测试，均在 25℃ 室温、无风扇改装条件下完成。</p>
+        <ul>
+          <li>平均帧率：硬解 59.4 帧，软解 23.8 帧，片长 2 小时 46 分。</li>
+          <li>整机功耗：硬解 6.8W，软解 11.2W，连续播放 30 分钟读数。</li>
+          <li>CPU 占用：硬解 12%，软解 78%，采样间隔 5 秒。</li>
+        </ul>
+        <p>这组数字能直接反驳“软解一定更好”的说法：在 4K 片源上，软解连基本流畅都难保证。它也能反驳“硬解万能”：面对带复杂 ASS 特效的动画，硬解路径下字幕渲染交由 GPU，部分机型会出现字幕抖动，切软解后消失。</p>
+
+        <h3>说法差异：官方说明与用户实测的对不齐处</h3>
+        <p>3.8.0 更新说明写“默认开启硬件解码以降低功耗”，但 10月26日用户“南栀”在论坛贴出截图，TCL Q10G Pro 在默认设置下播放 4K 片源出现画面发绿，手动关闭硬解后正常。官方在 11月3日的回复中承认该机型存在色彩空间转换缺陷，建议用户把输出色域固定为 BT.709。这里要分清：发绿是事实，原因归到色彩空间转换是官方回应，至于是否只影响这一款机型，目前仍是推测，缺少其他品牌同芯片机型的复现记录。</p>
+
+        <div class="quote">可被反驳的判断：在 3000 元以内的电视盒子上，硬解的综合收益高于软解，除非片源分辨率低于 1080p 且带复杂特效字幕。反驳这条需要拿同价位设备在 4K 片源上做出软解稳定 50 帧以上的实测。</div>
+
+        <h3>判断拆成可核对的结构</h3>
+        <p>把“该不该开硬解”拆成四个可逐项打勾的条件，任一项不满足就切软解：</p>
+        <ul class="checklist">
+          <li>芯片规格页写明支持 HEVC Main10 与 VP9 Profile 2。</li>
+          <li>片源码率低于设备网口实测吞吐的 70%。</li>
+          <li>近三个月内该机型无硬解花屏、发绿的公开记录。</li>
+          <li>字幕为 SRT 或简单 ASS，不含动态遮罩与粒子特效。</li>
+        </ul>
+        <p>这套结构的好处是能复查。比如“网口吞吐 70%”这条，千兆网口实测约 112MB/s，70% 即 78MB/s，对应 620Mbps，绝大多数 4K 原盘都落在这条线以下。</p>
+      </article>
+    </section>
+
+    <!-- 体验指南 -->
+    <section class="section" id="guide">
+      <div class="sec-head">
+        <h2>安装与首次配置体验指南</h2>
+        <span class="hint">从下载到播第一部片，约 12 分钟</span>
+      </div>
+      <ol class="steps">
+        <li><b>确认设备架构</b>：电视盒子多为 ARM64，Windows 平板为 x64。装错包会提示“解析包错误”，重新下载对应架构版本即可。</li>
+        <li><b>授予存储权限</b>：安卓 11 以上需在系统设置里手动开启“所有文件访问”，否则扫描不到外接硬盘中的 MKV 文件。</li>
+        <li><b>添加片库目录</b>：把 NAS 挂载路径填为 <code>/volume1/video</code> 这类绝对路径，勾选“递归扫描”，首次索引 500 部影片约 3 分钟。</li>
+        <li><b>设定解码策略</b>：4K 片源选硬解，1080p 动画选软解；在“播放设置—解码”里可对单个文件夹单独指定。</li>
+        <li><b>字幕与音轨偏好</b>：默认字幕语言设为简体中文，音轨优先 TrueHD 直通；功放不支持时改 PCM 输出，避免无声。</li>
+        <li><b>投屏连接</b>：手机与电视接入同一 5G 频段，投屏列表里会出现设备名；若只显示 IP，多为路由器 AP 隔离未关。</li>
+      </ol>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section faq" id="faq">
+      <div class="sec-head">
+        <h2>常见问题解答</h2>
+        <span class="hint">按出现频率排序</span>
+      </div>
+      <details open>
+        <summary>蓝光原盘播放器在电视盒子卡顿怎么处理</summary>
+        <div class="ans">
+          <p>先确认码率。80Mbps 以上的片源需要千兆局域网与支持硬件解码的芯片，百兆网口实际吞吐约 11MB/s，对应 88Mbps，刚好卡在临界点。</p>
+          <p>盒子只有百兆网口时，改用 USB3.0 移动硬盘直连，同一片源在 Z9X 上从每 4 分钟缓冲一次变为全程无缓冲。</p>
+        </div>
+      </details>
+      <details>
+        <summary>HDR10 片源在普通电视上偏灰怎么办</summary>
+        <div class="ans">
+          <p>电视不支持 HDR 时，播放器会做色调映射。3.8.2 版把峰值亮度基准从 1000nits 改为 200nits，暗部更明显。</p>
+          <p>手动把输出色域改为 BT.709、关闭“强制 HDR 输出”，偏灰现象会减轻；代价是高光部分细节被压缩。</p>
+        </div>
+      </details>
+      <details>
+        <summary>播放器字幕外挂加载失败的常见原因</summary>
+        <div class="ans">
+          <p>字幕文件与视频同名但扩展名大小写不一致、编码为 GBK 未被识别、ASS 特效字幕缺少对应字体，这三种最常见。</p>
+          <p>逐个替换可定位：先改名为 <code>movie.chs.srt</code>，再用 UTF-8 重存，最后补装字体。</p>
+        </div>
+      </details>
+      <details>
+        <summary>DLNA 投屏总是几分钟后断连</summary>
+        <div class="ans">
+          <p>3.8.1 之前的版本用短连接调度，手机锁屏后投屏会话被回收；升级到 3.8.2 改长连接后，实测连续播放 2 小时未断。</p>
+          <p>若仍断连，检查路由器是否开启 AP 隔离，以及手机与电视是否在同一 5G 频段。</p>
+        </div>
+      </details>
+      <details>
+        <summary>播放 DTS 音轨没有声音</summary>
+        <div class="ans">
+          <p>电视自带扬声器多不支持 DTS 解码，直通输出会静音。把音频输出改为 PCM 立体声，或接支持 DTS-HD 的功放。</p>
+          <p>芝杜、海美迪部分机型内置 DTS 软解，可在设置里打开“音频解码兼容模式”。</p>
+        </div>
+      </details>
+    </section>
+
+    <!-- 用户评论 -->
+    <section class="section" id="comments">
+      <div class="sec-head">
+        <h2>用户评论与反馈</h2>
+        <span class="hint">含中性评价与具体条目指向</span>
+      </div>
+      <div class="cmt-list">
+        <div class="cmt">
+          <div class="cmt-top"><span class="avatar">阿</span><b>阿澈</b><span class="meta">11月4日</span></div>
+          <p>小米盒子 4S 播《沙丘2》4K 原盘卡成幻灯片，按深度解析那篇换 Main8 片源后正常。问题确实在芯片只支持 8bit，不在网速。</p>
+        </div>
+        <div class="cmt mid">
+          <div class="cmt-top"><span class="avatar">南</span><b>南栀</b><span class="meta">11月3日</span></div>
+          <p>3.8.2 的字体回退好用。之前《紫罗兰永恒花园》ASS 字幕全是方框，装完思源黑体才正常，现在不用手动装了。</p>
+        </div>
+        <div class="cmt neutral">
+          <div class="cmt-top"><span class="avatar">K</span><b>老K</b><span class="meta">11月2日</span></div>
+          <p>硬解优先这套说法我保留意见。S905X3 播 1080p 动画时硬解画面偏软，切软解细节更清楚，深度解析里也承认了这点，但标题还是太绝对。</p>
+        </div>
+        <div class="cmt">
+          <div class="cmt-top"><span class="avatar">小</span><b>小满</b><span class="meta">11月1日</span></div>
+          <p>投屏断连升级到 3.8.2 后真的好了，B 站投电视连续看两集没断。路由器那步 AP 隔离也顺手关了。</p>
+        </div>
+        <div class="cmt mid">
+          <div class="cmt-top"><span class="avatar">程</span><b>程野</b><span class="meta">10月29日</span></div>
+          <p>章节书签能导出 JSON 还行，但只能存 20 个有点少。一季 12 集的剧每集标记一两个就满了。</p>
+        </div>
+        <div class="cmt">
+          <div class="cmt-top"><span class="avatar">林</span><b>林深</b><span class="meta">10月27日</span></div>
+          <p>芝杜 Z9X 上百兆网口换千兆后，《星际穿越》86Mbps 原盘终于不缓冲。之前以为是解码性能问题，白折腾了两天。</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 相关资讯 -->
+    <section class="section" id="news">
+      <div class="sec-head">
+        <h2>相关资讯</h2>
+        <span class="hint">与播放器、片源、硬件相关的动态</span>
+      </div>
+      <div class="news-list">
+        <div class="news-item"><time>11月7日</time><a href="/#updates">Amlogic 发布 S905X5 规格，新增 AV1 硬解</a><small>对老片库影响有限</small></div>
+        <div class="news-item"><time>11月5日</time><a href="/#deep">多款 4K 电视实测 BT.709 色域偏差</a><small>涉及 6 个品牌 11 型号</small></div>
+        <div class="news-item"><time>11月2日</time><a href="/#faq">ASS 字幕字体包体积压缩方案讨论</a><small>社区提交 3 种做法</small></div>
+        <div class="news-item"><time>10月30日</time><a href="/#timeline">芝杜 Z9X 固件 1.0.98 修复 HDR 切换黑屏</a><small>与播放器版本无关</small></div>
+        <div class="news-item"><time>10月25日</time><a href="/#picks">蓝光原盘压制组发布 HEVC 10bit 新片单</a><small>共 18 部</small></div>
+      </div>
+    </section>
+
+    <!-- 时间线 / 可信度分层 -->
+    <section class="section" id="timeline">
+      <div class="sec-head">
+        <h2>机型兼容时间线</h2>
+        <span class="hint">硬解支持记录按时间排列</span>
+      </div>
+      <ul class="timeline">
+        <li><time>11月6日</time><b>3.8.2 适配索尼 X90L</b><span>HDR10 色调映射在该机型上通过验证，峰值亮度按 200nits 输出。</span></li>
+        <li><time>10月30日</time><b>TCL Q10G Pro 标记为“色域缺陷”</b><span>硬解下画面发绿，官方建议固定 BT.709 输出。</span></li>
+        <li><time>10月24日</time><b>小米电视 S Pro 通过 4K 60Hz 测试</b><span>连续播放 3 小时无掉帧，CPU 占用稳定在 14% 左右。</span></li>
+        <li><time>10月18日</time><b>海思 Hi3798MV200 花屏问题登记</b><span>3.8.1 热修覆盖，涉及 4 个盒子型号。</span></li>
+      </ul>
+    </section>
+
+    <!-- 相关推荐 -->
+    <section class="section" id="related">
+      <div class="sec-head">
+        <h2>相关推荐</h2>
+        <span class="hint">按关键词直达对应说明</span>
+      </div>
+      <div class="tags">
+        <a href="/#deep">4K HDR 色调映射设置</a>
+        <a href="/#faq">ASS 特效字幕字体缺失</a>
+        <a href="/#guide">蓝光原盘 BDMV 播放</a>
+        <a href="/#picks">千兆 NAS 片库搭建</a>
+        <a href="/#faq">DTS 音轨直通无声</a>
+        <a href="/#guide">DLNA 投屏断连排查</a>
+        <a href="/#timeline">海思芯片花屏修复</a>
+        <a href="/#updates">3.8.2 版本更新内容</a>
+        <a href="/#picks">HEVC Main10 片源测试</a>
+        <a href="/#deep">硬解与软解功耗对比</a>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- 侧栏 -->
+  <aside class="side-col" aria-label="辅助导航与工具">
+    <div class="side-card">
+      <h3>站内查找</h3>
+      <form class="search-box" id="searchForm" role="search">
+        <input type="search" id="searchInput" placeholder="搜索字幕、投屏、硬解…" aria-label="站内关键词搜索">
+        <button type="submit">查找</button>
+      </form>
+      <div id="searchResult" aria-live="polite"></div>
+    </div>
+
+    <div class="side-card side-nav" id="sideNav" aria-label="栏目快捷导航">
+      <h3>栏目导航</h3>
+      <a href="/#overview">播放器概览</a>
+      <a href="/#picks">精选片源</a>
+      <a href="/#updates">版本动态</a>
+      <a href="/#cats">功能分类</a>
+      <a href="/#deep">深度解析</a>
+      <a href="/#guide">安装指南</a>
+      <a href="/#faq">常见问题</a>
+      <a href="/#comments">用户评论</a>
+      <a href="/#news">相关资讯</a>
+      <a href="/#timeline">兼容时间线</a>
+    </div>
+
+    <div class="side-card side-rank">
+      <h3>本周故障排查排行</h3>
+      <ol>
+        <li><a href="/#faq">4K 原盘周期性缓冲</a><em>11月2日—11月8日 · 76 次</em></li>
+        <li><a href="/#faq">ASS 字幕显示方框</a><em>11月2日—11月8日 · 63 次</em></li>
+        <li><a href="/#faq">投屏三分钟断连</a><em>11月2日—11月8日 · 51 次</em></li>
+        <li><a href="/#faq">DTS 音轨无声</a><em>11月2日—11月8日 · 38 次</em></li>
+      </ol>
+    </div>
+
+    <div class="side-card tip-card">
+      <h3>播放前两分钟自检</h3>
+      <p>片源分辨率、编码类型、网口速率三项对得上，能省掉大多数卡顿排查。4K HEVC 配百兆网口，基本必掉帧。</p>
+    </div>
+  </aside>
+</div>
+
+<!-- 页脚 -->
+<footer class="footer">
+  <div class="footer-in">
+    <div class="footer-top">
+      <div>
+        <div class="footer-brand">
+          <svg viewBox="0 0 64 64" aria-hidden="true">
+            <rect width="64" height="64" rx="14" fill="#12457f"/>
+            <path d="M18 16h17a11 11 0 0 1 0 22H18z" fill="#4dabf7"/>
+            <path d="M18 40h13l11 9H18z" fill="#ffd43b"/>
+          </svg>
+          小蓝gtv官网
+        </div>
+        <p>面向本地片库用户的播放器说明站，整理解码、字幕、投屏与机型兼容的实测记录。</p>
+        <p>页面内容含示例条目，机型数据与用户反馈均为演示用途。</p>
+      </div>
+      <div class="footer-groups">
+        <div>
+          <h4>功能说明</h4>
+          <a href="/#overview">播放器概览</a>
+          <a href="/#guide">安装与首次配置</a>
+          <a href="/#deep">硬解与软解解析</a>
+          <a href="/#faq">字幕与音轨问题</a>
+        </div>
+        <div>
+          <h4>动态与清单</h4>
+          <a href="/#updates">版本更新记录</a>
+          <a href="/#timeline">机型兼容时间线</a>
+          <a href="/#news">相关资讯</a>
+          <a href="/#picks">本周精选片源</a>
+        </div>
+        <div>
+          <h4>互动</h4>
+          <a href="/#comments">用户评论</a>
+          <a href="/#related">相关推荐</a>
+          <a href="/#cats">功能分类入口</a>
+          <a href="/#top">回到顶部</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>页面内容更新于 2026年11月8日，对应 3.8.2 版本说明与兼容清单。</span>
+      <span>© 2026 小蓝gtv官网 · 示例站点，数据仅作演示</span>
+    </div>
+  </div>
+</footer>
+
+<button id="toTop" aria-label="回到顶部">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+</button>
+
+<script>
+(function(){
+  "use strict";
+
+  /* 移动端菜单 */
+  var menuBtn = document.getElementById('menuBtn');
+  var mainNav = document.getElementById('mainNav');
+  if(menuBtn && mainNav){
+    menuBtn.addEventListener('click', function(){
+      var open = mainNav.classList.toggle('open');
+      menuBtn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+    mainNav.addEventListener('click', function(e){
+      if(e.target.tagName === 'A' && window.matchMedia('(max-width: 960px)').matches){
+        mainNav.classList.remove('open');
+        menuBtn.setAttribute('aria-expanded','false');
+      }
+    });
+  }
+
+  /* 回到顶部按钮 */
+  var toTop = document.getElementById('toTop');
+  if(toTop){
+    window.addEventListener('scroll', function(){
+      if(window.scrollY > 480){ toTop.classList.add('show'); }
+      else { toTop.classList.remove('show'); }
+    }, {passive:true});
+    toTop.addEventListener('click', function(){
+      window.scrollTo({top:0, behavior:'smooth'});
+    });
+  }
+
+  /* 侧栏滚动高亮 */
+  var sideLinks = Array.prototype.slice.call(document.querySelectorAll('#sideNav a'));
+  var targets = sideLinks.map(function(a){
+    var id = a.getAttribute('href').replace('/#','');
+    return document.getElementById(id);
+  });
+  function highlight(){
+    var pos = window.scrollY + 140;
+    var current = -1;
+    targets.forEach(function(el, i){
+      if(el && el.offsetTop <= pos){ current = i; }
+    });
+    sideLinks.forEach(function(a, i){
+      a.classList.toggle('on', i === current);
+    });
+  }
+  window.addEventListener('scroll', highlight, {passive:true});
+  window.addEventListener('resize', highlight);
+  highlight();
+
+  /* 本地搜索 */
+  var input = document.getElementById('searchInput');
+  var form = document.getElementById('searchForm');
+  var result = document.getElementById('searchResult');
+  var index = [
+    {t:'4K HDR 色调映射设置', k:'HDR10 色调映射 BT.709 偏灰 色域 电视', id:'deep'},
+    {t:'ASS 特效字幕字体缺失', k:'ASS 字幕 方框 字体 回退 字幕', id:'faq'},
+    {t:'蓝光原盘 BDMV 播放', k:'蓝光 原盘 BDMV ISO 菜单 Remux', id:'picks'},
+    {t:'千兆 NAS 片库搭建', k:'NAS 千兆 网口 码率 缓冲 片库', id:'picks'},
+    {t:'DTS 音轨直通无声', k:'DTS 音轨 功放 直通 PCM 音频', id:'faq'},
+    {t:'DLNA 投屏断连排查', k:'DLNA 投屏 断连 AP隔离 路由器', id:'guide'},
+    {t:'海思芯片花屏修复', k:'海思 Hi3798 花屏 花屏修复', id:'timeline'},
+    {t:'3.8.2 版本更新内容', k:'3.8.2 版本 更新 热修 公测', id:'updates'},
+    {t:'硬解与软解功耗对比', k:'硬解 软解 功耗 帧率 CPU 占用', id:'deep'},
+    {t:'安装与首次配置', k:'安装 权限 扫描 片库 解码 字幕 音轨', id:'guide'},
+    {t:'机型兼容时间线', k:'机型 兼容 索尼 TCL 小米 海思', id:'timeline'},
+    {t:'用户评论与反馈', k:'评论 反馈 用户 体验', id:'comments'}
+  ];
+  function doSearch(){
+    var q = (input.value || '').trim().toLowerCase();
+    if(!q){
+      result.textContent = '请输入关键词，例如“字幕”“投屏”“硬解”。';
+      return;
+    }
+    var hits = index.filter(function(item){
+      return item.t.toLowerCase().indexOf(q) > -1 || item.k.toLowerCase().indexOf(q) > -1;
+    });
+    if(hits.length === 0){
+      result.textContent = '没有找到与“' + q + '”匹配的条目，可试试“字幕”“投屏”“4K”或“DTS”。';
+      return;
+    }
+    var html = '找到 ' + hits.length + ' 条：';
+    hits.slice(0,4).forEach(function(item){
+      html += ' <a href="/#'+item.id+'"><b>'+item.t+'</b></a>';
+    });
+    result.innerHTML = html;
+  }
+  if(form){ form.addEventListener('submit', function(e){ e.preventDefault(); doSearch(); }); }
+  if(input){ input.addEventListener('input', function(){ if(input.value.length > 1){ doSearch(); } }); }
+})();
+</script>
+</body>
+</html>
