@@ -1,0 +1,1241 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>回家今日看料-春节返乡路况与年货指南</title>
+<meta name="description" content="回家今日看料聚焦春节返乡：今日高速拥堵路段、春运抢票余票、年货采购清单与县城物价对比。用2026年11月8日前后的实测数据，整理出发时间建议、行李打包步骤和家乡气候对照，帮你在返乡前把路况、车次、年货预算一次看明白。">
+<meta name="keywords" content="回家今日看料">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23b4462f'/%3E%3Cpath d='M14 34 L32 18 L50 34' fill='none' stroke='%23fff3e0' stroke-width='5' stroke-linecap='round' stroke-linejoin='round'/%3E%3Crect x='22' y='34' width='20' height='16' rx='2' fill='%23fff3e0'/%3E%3C/svg%3E">
+<style>
+:root{
+  --red:#b4462f;
+  --red-deep:#8c3323;
+  --amber:#d98e2b;
+  --cream:#fdf8f1;
+  --paper:#ffffff;
+  --ink:#2b2320;
+  --ink-soft:#5c514b;
+  --ink-mute:#8a7d75;
+  --line:#e8ddd2;
+  --line-soft:#f1e9df;
+  --green:#3f7a54;
+  --blue:#3b6a8f;
+  --radius-s:6px;
+  --radius-m:10px;
+  --radius-l:16px;
+  --shadow-s:0 1px 2px rgba(70,45,30,.06),0 2px 6px rgba(70,45,30,.05);
+  --shadow-m:0 4px 14px rgba(70,45,30,.10);
+  --space-1:4px;--space-2:8px;--space-3:12px;--space-4:16px;
+  --space-5:24px;--space-6:32px;--space-7:48px;--space-8:64px;
+  --font:"PingFang SC","Hiragino Sans GB","Microsoft YaHei","Noto Sans SC",system-ui,sans-serif;
+  --sticky-h:104px;
+  --maxw:1180px;
+}
+*{box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+@media (prefers-reduced-motion: reduce){
+  html{scroll-behavior:auto;}
+  *{animation:none!important;transition:none!important;}
+}
+body{
+  margin:0;
+  font-family:var(--font);
+  color:var(--ink);
+  background:var(--cream);
+  line-height:1.75;
+  font-size:16px;
+  -webkit-text-size-adjust:100%;
+}
+img{max-width:100%;display:block;}
+a{color:var(--red-deep);text-decoration:none;}
+a:hover{text-decoration:underline;}
+h1,h2,h3,h4{line-height:1.35;margin:0;color:var(--ink);}
+p{margin:0 0 var(--space-3);}
+ul,ol{margin:0 0 var(--space-3);padding-left:1.25em;}
+button{font-family:inherit;cursor:pointer;}
+:focus-visible{outline:3px solid var(--amber);outline-offset:2px;border-radius:4px;}
+
+/* ---------- 吸顶组合：公告条 + 页头 ---------- */
+.sticky-wrap{
+  position:sticky;top:0;z-index:50;
+}
+.announce{
+  background:linear-gradient(90deg,var(--red-deep),var(--red));
+  color:#fff5e9;
+  font-size:13.5px;
+  padding:7px 16px;
+  display:flex;align-items:center;justify-content:center;gap:10px;
+  text-align:center;
+}
+.announce strong{font-weight:700;letter-spacing:.5px;}
+.announce .dot{width:6px;height:6px;border-radius:50%;background:var(--amber);flex:none;}
+.announce a{color:#ffe3bf;text-decoration:underline;white-space:nowrap;}
+.site-header{
+  background:rgba(253,248,241,.96);
+  backdrop-filter:blur(8px);
+  border-bottom:1px solid var(--line);
+  box-shadow:var(--shadow-s);
+}
+.header-inner{
+  max-width:var(--maxw);
+  margin:0 auto;
+  padding:10px 20px;
+  display:flex;align-items:center;gap:20px;
+}
+.brand{display:flex;align-items:center;gap:10px;flex:none;}
+.brand svg{width:38px;height:38px;flex:none;}
+.brand-text{display:flex;flex-direction:column;line-height:1.2;}
+.brand-text .name{font-weight:800;font-size:17.5px;color:var(--red-deep);letter-spacing:.5px;}
+.brand-text .sub{font-size:11px;color:var(--ink-mute);letter-spacing:.14em;}
+.main-nav{flex:1 1 auto;}
+.main-nav ul{
+  list-style:none;margin:0;padding:0;
+  display:flex;flex-wrap:wrap;gap:4px 6px;
+}
+.main-nav a{
+  display:block;padding:6px 11px;border-radius:99px;
+  font-size:14px;color:var(--ink-soft);
+  transition:background .18s,color .18s;
+  white-space:nowrap;
+}
+.main-nav a:hover{background:var(--line-soft);color:var(--red-deep);text-decoration:none;}
+.main-nav a.active{background:var(--red);color:#fff;font-weight:600;}
+.header-tools{display:flex;align-items:center;gap:8px;flex:none;}
+.search-box{position:relative;display:flex;align-items:center;}
+.search-box input{
+  width:168px;padding:7px 30px 7px 12px;border:1px solid var(--line);
+  border-radius:99px;background:var(--paper);font-size:13.5px;color:var(--ink);
+  transition:border-color .18s,width .18s;
+}
+.search-box input:focus{border-color:var(--amber);outline:none;width:190px;}
+.search-box button{
+  position:absolute;right:4px;top:50%;transform:translateY(-50%);
+  border:none;background:none;padding:4px;color:var(--ink-mute);
+  display:flex;align-items:center;
+}
+.search-box button:hover{color:var(--red);}
+.search-feedback{
+  position:absolute;top:calc(100% + 8px);left:0;right:0;
+  background:var(--paper);border:1px solid var(--line);border-radius:var(--radius-m);
+  box-shadow:var(--shadow-m);padding:10px 12px;font-size:13px;color:var(--ink-soft);
+  display:none;z-index:60;
+}
+.search-feedback.show{display:block;}
+.menu-btn{
+  display:none;border:1px solid var(--line);background:var(--paper);
+  border-radius:var(--radius-s);padding:7px 10px;color:var(--ink-soft);
+  align-items:center;gap:6px;font-size:13px;
+}
+.menu-btn:hover{border-color:var(--amber);color:var(--red-deep);}
+.menu-btn svg{width:16px;height:16px;}
+
+/* ---------- 首屏 ---------- */
+.hero{
+  position:relative;
+  background:
+    radial-gradient(circle at 82% 18%, rgba(217,142,43,.14), transparent 42%),
+    radial-gradient(circle at 12% 84%, rgba(180,70,47,.10), transparent 40%),
+    linear-gradient(180deg,#fff9f0 0%,var(--cream) 100%);
+  overflow:hidden;
+  border-bottom:1px solid var(--line-soft);
+}
+.hero-inner{
+  max-width:var(--maxw);margin:0 auto;padding:52px 20px 44px;
+  display:grid;grid-template-columns:1.15fr .85fr;gap:48px;align-items:center;
+}
+.hero-tag{
+  display:inline-flex;align-items:center;gap:8px;
+  font-size:12.5px;letter-spacing:.1em;color:var(--red-deep);
+  background:#fff0e2;border:1px solid #f0d3ba;border-radius:99px;
+  padding:4px 12px;margin-bottom:18px;
+}
+.hero h1{
+  font-size:clamp(30px,4vw,46px);
+  font-weight:850;letter-spacing:.5px;color:var(--ink);
+  margin-bottom:16px;
+}
+.hero h1 .hl{
+  color:var(--red);position:relative;white-space:nowrap;
+}
+.hero h1 .hl::after{
+  content:"";position:absolute;left:0;right:0;bottom:6px;height:10px;
+  background:rgba(217,142,43,.28);z-index:-1;border-radius:4px;
+}
+.hero-desc{
+  font-size:16.5px;color:var(--ink-soft);max-width:34em;margin-bottom:24px;
+}
+.hero-desc b{color:var(--ink);font-weight:700;}
+.hero-actions{display:flex;flex-wrap:wrap;gap:12px;margin-bottom:26px;}
+.btn{
+  display:inline-flex;align-items:center;gap:7px;
+  padding:10px 20px;border-radius:99px;font-size:14.5px;font-weight:600;
+  border:1px solid transparent;transition:transform .18s,box-shadow .18s,background .18s;
+}
+.btn:hover{text-decoration:none;transform:translateY(-2px);}
+.btn-primary{background:var(--red);color:#fff;box-shadow:0 4px 12px rgba(180,70,47,.26);}
+.btn-primary:hover{background:var(--red-deep);}
+.btn-ghost{background:var(--paper);color:var(--red-deep);border-color:var(--line);}
+.btn-ghost:hover{border-color:var(--red);}
+.hero-stats{
+  display:flex;flex-wrap:wrap;gap:22px;
+  border-top:1px solid var(--line);padding-top:18px;
+}
+.hero-stats div{display:flex;flex-direction:column;}
+.hero-stats .num{font-size:22px;font-weight:800;color:var(--red-deep);line-height:1.2;}
+.hero-stats .lab{font-size:12.5px;color:var(--ink-mute);}
+.hero-art{position:relative;display:flex;justify-content:center;}
+.hero-art svg{width:100%;max-width:400px;height:auto;filter:drop-shadow(0 12px 24px rgba(140,51,35,.14));}
+
+/* ---------- 页面主结构 ---------- */
+.layout{
+  max-width:var(--maxw);margin:0 auto;padding:36px 20px 12px;
+  display:grid;grid-template-columns:minmax(0,1fr) 306px;gap:40px;
+}
+main{min-width:0;}
+aside{min-width:0;}
+
+/* 板块通用 */
+.section{padding:26px 0;border-bottom:1px solid var(--line-soft);scroll-margin-top:calc(var(--sticky-h) + 14px);}
+.section:last-child{border-bottom:none;}
+.section-head{display:flex;align-items:flex-end;justify-content:space-between;gap:16px;margin-bottom:18px;flex-wrap:wrap;}
+.section-head h2{
+  font-size:22px;font-weight:800;letter-spacing:.3px;position:relative;padding-left:14px;
+}
+.section-head h2::before{
+  content:"";position:absolute;left:0;top:6px;bottom:6px;width:4px;border-radius:3px;
+  background:linear-gradient(180deg,var(--red),var(--amber));
+}
+.section-head .more{font-size:13px;color:var(--ink-mute);white-space:nowrap;}
+.section-head .more:hover{color:var(--red-deep);}
+.sec-note{font-size:13.5px;color:var(--ink-mute);margin:-6px 0 16px;}
+
+/* 概览卡组 */
+.overview-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;}
+.ov-card{
+  background:var(--paper);border:1px solid var(--line);border-radius:var(--radius-m);
+  padding:16px 16px 14px;box-shadow:var(--shadow-s);
+  transition:transform .18s,box-shadow .18s;
+}
+.ov-card:hover{transform:translateY(-3px);box-shadow:var(--shadow-m);}
+.ov-card .k{font-size:12px;color:var(--ink-mute);letter-spacing:.08em;}
+.ov-card .v{font-size:20px;font-weight:800;color:var(--red-deep);margin:2px 0 6px;}
+.ov-card .d{font-size:13px;color:var(--ink-soft);}
+.ov-card .d b{color:var(--ink);}
+
+/* 精选 网格卡片 */
+.feature-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;}
+.feat-card{
+  background:var(--paper);border:1px solid var(--line);border-radius:var(--radius-l);
+  overflow:hidden;display:flex;flex-direction:column;box-shadow:var(--shadow-s);
+  transition:transform .18s,box-shadow .18s;
+}
+.feat-card:hover{transform:translateY(-3px);box-shadow:var(--shadow-m);}
+.feat-card img{width:100%;height:150px;object-fit:cover;}
+.feat-body{padding:14px 16px 16px;display:flex;flex-direction:column;flex:1 1 auto;}
+.chip{
+  display:inline-block;font-size:11.5px;padding:2px 9px;border-radius:99px;
+  background:#fbeadf;color:var(--red-deep);margin-bottom:8px;font-weight:600;align-self:flex-start;
+}
+.chip.green{background:#e7f0e9;color:var(--green);}
+.chip.blue{background:#e6eef4;color:var(--blue);}
+.chip.amber{background:#fdf0d9;color:#9a6416;}
+.feat-card h3{font-size:16px;font-weight:700;margin-bottom:6px;}
+.feat-card p{font-size:13.5px;color:var(--ink-soft);margin:0;flex:1 1 auto;}
+.feat-meta{font-size:12px;color:var(--ink-mute);margin-top:10px;display:flex;gap:12px;flex-wrap:wrap;}
+
+/* 最新更新 紧凑列表 */
+.update-list{list-style:none;margin:0;padding:0;border:1px solid var(--line);border-radius:var(--radius-m);overflow:hidden;background:var(--paper);}
+.update-list li{
+  display:grid;grid-template-columns:82px 1fr auto;gap:12px;align-items:baseline;
+  padding:12px 16px;border-bottom:1px dashed var(--line-soft);
+}
+.update-list li:last-child{border-bottom:none;}
+.update-list time{font-size:12.5px;color:var(--ink-mute);font-variant-numeric:tabular-nums;}
+.update-list .u-title{font-size:14.5px;font-weight:600;color:var(--ink);}
+.update-list .u-title:hover{color:var(--red-deep);}
+.update-list .u-tag{font-size:11.5px;color:var(--red-deep);background:#fbeadf;border-radius:99px;padding:1px 9px;white-space:nowrap;}
+
+/* 分类入口 标签索引 */
+.cat-index{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;}
+.cat-index a{
+  display:flex;flex-direction:column;gap:3px;padding:12px 12px 10px;
+  background:var(--paper);border:1px solid var(--line);border-radius:var(--radius-m);
+  color:var(--ink);font-size:14px;font-weight:600;transition:border-color .18s,background .18s,transform .18s;
+}
+.cat-index a span{font-size:11.5px;color:var(--ink-mute);font-weight:400;}
+.cat-index a:hover{border-color:var(--amber);background:#fffaf3;text-decoration:none;transform:translateY(-2px);}
+
+/* 深度解析 */
+.deep{
+  background:var(--paper);border:1px solid var(--line);border-radius:var(--radius-l);
+  padding:26px 28px;box-shadow:var(--shadow-s);
+}
+.deep .lede{font-size:15px;color:var(--ink-soft);border-left:3px solid var(--amber);padding-left:14px;margin-bottom:22px;}
+.deep h3{font-size:17.5px;font-weight:750;margin:26px 0 10px;padding-top:18px;border-top:1px dashed var(--line);}
+.deep h3:first-of-type{border-top:none;padding-top:0;margin-top:0;}
+.deep h3 .idx{color:var(--amber);font-weight:800;margin-right:6px;}
+.deep p{font-size:15px;color:var(--ink-soft);}
+.deep strong{color:var(--ink);}
+.deep table{width:100%;border-collapse:collapse;font-size:13.5px;margin:12px 0 18px;}
+.deep th,.deep td{border:1px solid var(--line);padding:8px 10px;text-align:left;vertical-align:top;}
+.deep th{background:#faf3ea;font-weight:700;color:var(--ink);white-space:nowrap;}
+.deep td b{color:var(--red-deep);}
+.deep blockquote{
+  margin:14px 0;padding:12px 16px;background:#fbf4ea;border-radius:var(--radius-m);
+  border-left:3px solid var(--red);font-size:14px;color:var(--ink-soft);
+}
+.deep blockquote cite{display:block;font-style:normal;font-size:12px;color:var(--ink-mute);margin-top:6px;}
+
+/* 体验指南 编号步骤 */
+.steps{list-style:none;counter-reset:step;margin:0;padding:0;display:grid;gap:12px;}
+.steps li{
+  counter-increment:step;position:relative;
+  background:var(--paper);border:1px solid var(--line);border-radius:var(--radius-m);
+  padding:14px 16px 14px 58px;font-size:14px;color:var(--ink-soft);
+}
+.steps li::before{
+  content:counter(step);position:absolute;left:16px;top:14px;
+  width:26px;height:26px;border-radius:50%;
+  background:var(--red);color:#fff;font-weight:800;font-size:13.5px;
+  display:flex;align-items:center;justify-content:center;
+}
+.steps li b{color:var(--ink);display:block;font-size:14.5px;margin-bottom:2px;}
+
+/* 对照面板 */
+.compare{
+  display:grid;grid-template-columns:1fr 1fr;gap:0;
+  border:1px solid var(--line);border-radius:var(--radius-m);overflow:hidden;background:var(--paper);
+}
+.compare>div{padding:16px 18px;}
+.compare>div:first-child{border-right:1px solid var(--line);}
+.compare h4{font-size:15px;font-weight:750;margin-bottom:10px;display:flex;align-items:center;gap:8px;}
+.compare h4 .pt{width:9px;height:9px;border-radius:2px;display:inline-block;}
+.compare ul{margin:0;padding-left:1.1em;font-size:13.5px;color:var(--ink-soft);}
+.compare li{margin-bottom:6px;}
+.compare .pt.g{background:var(--green);}
+.compare .pt.r{background:var(--red);}
+
+/* FAQ */
+.faq{display:grid;gap:10px;}
+details{
+  background:var(--paper);border:1px solid var(--line);border-radius:var(--radius-m);
+  padding:0 16px;transition:border-color .18s;
+}
+details[open]{border-color:var(--amber);}
+details summary{
+  list-style:none;cursor:pointer;padding:13px 26px 13px 0;position:relative;
+  font-size:15px;font-weight:650;color:var(--ink);
+}
+details summary::-webkit-details-marker{display:none;}
+details summary::after{
+  content:"+";position:absolute;right:0;top:50%;transform:translateY(-50%);
+  font-size:19px;color:var(--amber);font-weight:400;line-height:1;
+}
+details[open] summary::after{content:"−";}
+details .faq-body{padding:0 0 14px;font-size:14px;color:var(--ink-soft);border-top:1px dashed var(--line-soft);padding-top:12px;}
+
+/* 评论 */
+.comments{display:grid;gap:12px;}
+.cmt{
+  background:var(--paper);border:1px solid var(--line);border-radius:var(--radius-m);
+  padding:14px 16px;display:grid;grid-template-columns:40px 1fr;gap:12px;
+}
+.avatar{
+  width:40px;height:40px;border-radius:50%;background:#f0e3d5;color:var(--red-deep);
+  display:flex;align-items:center;justify-content:center;font-weight:800;font-size:15px;
+}
+.cmt .who{font-size:13px;color:var(--ink-mute);margin-bottom:3px;display:flex;gap:8px;align-items:baseline;flex-wrap:wrap;}
+.cmt .who b{color:var(--ink);font-size:13.5px;}
+.cmt p{font-size:14px;color:var(--ink-soft);margin:0;}
+.cmt .quote{font-size:12.5px;color:var(--ink-mute);border-left:2px solid var(--line);padding-left:8px;margin-top:8px;}
+
+/* 相关资讯 双列小卡 */
+.news-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
+.news-item{
+  background:var(--paper);border:1px solid var(--line);border-radius:var(--radius-m);
+  padding:13px 15px;transition:border-color .18s,transform .18s;
+}
+.news-item:hover{border-color:var(--amber);transform:translateY(-2px);}
+.news-item .n-meta{font-size:12px;color:var(--ink-mute);margin-bottom:4px;}
+.news-item h3{font-size:14.5px;font-weight:650;margin-bottom:4px;}
+.news-item p{font-size:13px;color:var(--ink-soft);margin:0;}
+
+/* 相关推荐 标签 */
+.tags{display:flex;flex-wrap:wrap;gap:9px;}
+.tags a{
+  font-size:13.5px;padding:6px 14px;border-radius:99px;background:var(--paper);
+  border:1px solid var(--line);color:var(--ink-soft);transition:all .18s;
+}
+.tags a:hover{background:var(--red);border-color:var(--red);color:#fff;text-decoration:none;}
+.tags a .n{font-size:11.5px;opacity:.7;margin-left:3px;}
+
+/* 榜单 时间线 */
+.rank-list{list-style:none;margin:0;padding:0;background:var(--paper);border:1px solid var(--line);border-radius:var(--radius-m);overflow:hidden;}
+.rank-list li{display:grid;grid-template-columns:34px 1fr auto;gap:12px;align-items:center;padding:11px 16px;border-bottom:1px solid var(--line-soft);font-size:14px;}
+.rank-list li:last-child{border-bottom:none;}
+.rank-list .rk{font-weight:850;font-size:15px;color:var(--ink-mute);text-align:center;}
+.rank-list li:nth-child(1) .rk{color:#c0392b;}
+.rank-list li:nth-child(2) .rk{color:#d98e2b;}
+.rank-list li:nth-child(3) .rk{color:#a9743a;}
+.rank-list .r-name{color:var(--ink);font-weight:600;}
+.rank-list .r-sub{font-size:12px;color:var(--ink-mute);font-weight:400;}
+.rank-list .r-val{font-size:13px;color:var(--red-deep);font-weight:700;white-space:nowrap;}
+
+/* 侧栏 */
+.side-card{
+  background:var(--paper);border:1px solid var(--line);border-radius:var(--radius-l);
+  padding:16px 18px;box-shadow:var(--shadow-s);margin-bottom:20px;
+}
+.side-card h3{font-size:15px;font-weight:800;margin-bottom:12px;display:flex;align-items:center;gap:8px;}
+.side-card h3::before{content:"";width:4px;height:14px;border-radius:2px;background:var(--amber);}
+.side-nav{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:2px;}
+.side-nav a{
+  display:block;font-size:13.5px;color:var(--ink-soft);padding:7px 10px;border-radius:var(--radius-s);
+  border-left:2px solid transparent;transition:all .16s;
+}
+.side-nav a:hover{background:#fbf3ea;color:var(--red-deep);text-decoration:none;}
+.side-nav a.active{background:#fbeadf;color:var(--red-deep);font-weight:700;border-left-color:var(--red);}
+.side-kv{list-style:none;margin:0;padding:0;font-size:13.5px;}
+.side-kv li{display:flex;justify-content:space-between;gap:10px;padding:7px 0;border-bottom:1px dashed var(--line-soft);color:var(--ink-soft);}
+.side-kv li:last-child{border-bottom:none;}
+.side-kv b{color:var(--ink);font-weight:700;}
+.side-tags{display:flex;flex-wrap:wrap;gap:7px;}
+.side-tags a{font-size:12.5px;padding:4px 10px;border-radius:99px;background:#f7efe4;color:var(--ink-soft);}
+.side-tags a:hover{background:var(--red);color:#fff;text-decoration:none;}
+.side-card.tip{background:linear-gradient(160deg,#fff6ea,#fdeee0);border-color:#f0d3ba;font-size:13.5px;color:var(--ink-soft);}
+.side-card.tip b{color:var(--red-deep);}
+
+/* 页脚 */
+.site-footer{
+  background:#2b2320;color:#d8cdc3;margin-top:40px;font-size:13.5px;
+}
+.footer-inner{max-width:var(--maxw);margin:0 auto;padding:40px 20px 26px;}
+.footer-top{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:28px;margin-bottom:28px;}
+.footer-brand .fname{font-size:18px;font-weight:800;color:#fff;letter-spacing:.5px;margin-bottom:8px;display:flex;align-items:center;gap:9px;}
+.footer-brand .fname svg{width:26px;height:26px;}
+.footer-brand p{color:#b3a79c;font-size:13px;line-height:1.7;margin:0 0 12px;}
+.footer-col h4{font-size:13.5px;color:#fff;font-weight:700;margin-bottom:10px;letter-spacing:.05em;}
+.footer-col ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:7px;}
+.footer-col a{color:#b3a79c;font-size:13px;}
+.footer-col a:hover{color:#f5c98d;text-decoration:none;}
+.footer-bottom{border-top:1px solid #453a33;padding-top:18px;display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;color:#8f837a;font-size:12.5px;}
+.footer-bottom .upd{color:#b3a79c;}
+
+/* 回到顶部 */
+#toTop{
+  position:fixed;right:20px;bottom:24px;z-index:70;
+  width:44px;height:44px;border-radius:50%;border:none;
+  background:var(--red);color:#fff;box-shadow:0 6px 16px rgba(140,51,35,.35);
+  display:flex;align-items:center;justify-content:center;
+  opacity:0;pointer-events:none;transform:translateY(8px);
+  transition:opacity .22s,transform .22s;
+}
+#toTop.show{opacity:1;pointer-events:auto;transform:translateY(0);}
+#toTop:hover{background:var(--red-deep);}
+
+/* 响应式 */
+@media (max-width:960px){
+  .layout{grid-template-columns:1fr;gap:28px;}
+  aside{order:2;}
+  main{order:1;}
+  .hero-inner{grid-template-columns:1fr;gap:30px;padding-top:38px;}
+  .hero-art{order:-1;max-width:320px;margin:0 auto;}
+  .footer-top{grid-template-columns:1fr 1fr;}
+  .overview-grid{grid-template-columns:1fr 1fr;}
+}
+@media (max-width:820px){
+  .main-nav{display:none;}
+  .main-nav.open{
+    display:block;position:absolute;left:0;right:0;top:100%;
+    background:var(--paper);border-bottom:1px solid var(--line);
+    box-shadow:var(--shadow-m);padding:12px 16px 16px;
+  }
+  .main-nav.open ul{flex-direction:column;gap:2px;}
+  .main-nav.open a{padding:9px 12px;border-radius:var(--radius-s);}
+  .header-inner{position:relative;flex-wrap:wrap;}
+  .menu-btn{display:inline-flex;}
+  .header-tools{margin-left:auto;}
+  .search-box input{width:130px;}
+  .search-box input:focus{width:150px;}
+  .feature-grid,.news-grid{grid-template-columns:1fr;}
+  .cat-index{grid-template-columns:1fr 1fr;}
+  .compare{grid-template-columns:1fr;}
+  .compare>div:first-child{border-right:none;border-bottom:1px solid var(--line);}
+}
+@media (max-width:560px){
+  .hero-inner{padding:30px 16px 32px;}
+  .layout{padding:24px 16px 8px;}
+  .section{padding:20px 0;}
+  .section-head h2{font-size:19px;}
+  .overview-grid{grid-template-columns:1fr;}
+  .hero-stats{gap:16px;}
+  .hero-stats .num{font-size:19px;}
+  .update-list li{grid-template-columns:1fr;gap:3px;}
+  .update-list .u-tag{justify-self:start;}
+  .footer-top{grid-template-columns:1fr;}
+  .deep{padding:18px 16px;}
+  .search-box input{width:110px;}
+  .search-box input:focus{width:120px;}
+  .cat-index{grid-template-columns:1fr 1fr;}
+  #toTop{right:14px;bottom:16px;width:40px;height:40px;}
+  .announce{font-size:12px;padding:6px 10px;flex-wrap:wrap;gap:4px;}
+}
+</style>
+<script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</head>
+<body>
+
+<div class="sticky-wrap">
+  <div class="announce">
+    <span class="dot" aria-hidden="true"></span>
+    <strong>回家今日看料</strong>
+    <span>2026年11月7日 18:00 更新：沪昆高速衢州段、京港澳高速保定段拥堵已回落，明日早高峰预计提前至 7:20。</span>
+    <a href="/#updates">查看滚动播报</a>
+  </div>
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand" href="/#" aria-label="回家今日看料 首页">
+        <svg viewBox="0 0 64 64" role="img" aria-hidden="true">
+          <rect width="64" height="64" rx="14" fill="#b4462f"/>
+          <path d="M13 35 L32 17 L51 35" fill="none" stroke="#fff3e0" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+          <rect x="22" y="35" width="20" height="17" rx="2" fill="#fff3e0"/>
+          <rect x="29" y="41" width="6" height="11" rx="1" fill="#b4462f"/>
+          <circle cx="48" cy="17" r="6" fill="#d98e2b"/>
+        </svg>
+        <span class="brand-text">
+          <span class="name">回家今日看料</span>
+          <span class="sub">返乡 · 路况 · 年货</span>
+        </span>
+      </a>
+      <nav class="main-nav" id="mainNav" aria-label="主题导航">
+        <ul>
+          <li><a href="/#overview" class="active">今日概览</a></li>
+          <li><a href="/#updates">路况播报</a></li>
+          <li><a href="/#features">精选推荐</a></li>
+          <li><a href="/#channels">频道索引</a></li>
+          <li><a href="/#deep">深度解析</a></li>
+          <li><a href="/#guide">出行指南</a></li>
+          <li><a href="/#faq">常见问题</a></li>
+        </ul>
+      </nav>
+      <div class="header-tools">
+        <div class="search-box">
+          <input type="search" id="siteSearch" placeholder="搜路况 / 年货 / 车次" aria-label="站内搜索">
+          <button type="button" id="searchBtn" aria-label="搜索">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.6-3.6"/></svg>
+          </button>
+        </div>
+        <div class="search-feedback" id="searchFeedback" role="status" aria-live="polite"></div>
+        <button class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="mainNav">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+          菜单
+        </button>
+      </div>
+    </div>
+  </header>
+</div>
+
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-copy">
+      <span class="hero-tag">2026 年返乡季 · 第 2 周</span>
+      <h1><span class="hl">回家今日看料</span></h1>
+      <p class="hero-desc">
+        从高速公路实时拥堵指数，到 12306 候补兑现率，再到县城超市年货价签——把返乡这件事拆成 <b>路况、车次、年货、行李</b> 四个能当场核对的数字。
+        11 月 7 日 18:00 采集的 28 条路段数据里，有 6 条明天早高峰会提前拥堵，页内逐条列出。
+      </p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="/#updates">看今日路况播报</a>
+        <a class="btn btn-ghost" href="/#guide">按步骤准备返乡</a>
+      </div>
+      <div class="hero-stats">
+        <div><span class="num">28</span><span class="lab">条高速路段监测</span></div>
+        <div><span class="num">12</span><span class="lab">个返乡频道</span></div>
+        <div><span class="num">6</span><span class="lab">条明日早高峰预警</span></div>
+        <div><span class="num">11·7</span><span class="lab">数据采集日期</span></div>
+      </div>
+    </div>
+    <div class="hero-art" aria-hidden="true">
+      <svg viewBox="0 0 400 300" role="img">
+        <defs>
+          <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0" stop-color="#ffe9cc"/>
+            <stop offset="1" stop-color="#fdf8f1"/>
+          </linearGradient>
+          <linearGradient id="road" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0" stop-color="#6b5548"/>
+            <stop offset="1" stop-color="#3d3029"/>
+          </linearGradient>
+        </defs>
+        <rect x="0" y="0" width="400" height="300" rx="20" fill="url(#sky)"/>
+        <circle cx="312" cy="66" r="34" fill="#f2b45a" opacity=".9"/>
+        <path d="M0 210 Q100 176 200 196 T400 186 L400 300 L0 300 Z" fill="#e9d6bd"/>
+        <path d="M186 300 Q196 220 232 166 Q246 146 262 146 Q280 146 292 168 Q330 226 342 300 Z" fill="url(#road)"/>
+        <path d="M250 300 Q256 236 270 196" stroke="#f6d9a0" stroke-width="4" stroke-dasharray="14 12" fill="none"/>
+        <g fill="#8c3323">
+          <rect x="60" y="150" width="42" height="60" rx="3"/>
+          <rect x="112" y="168" width="30" height="42" rx="3"/>
+        </g>
+        <g fill="#fff3e0">
+          <rect x="66" y="160" width="10" height="10"/>
+          <rect x="84" y="160" width="10" height="10"/>
+          <rect x="66" y="180" width="10" height="10"/>
+          <rect x="84" y="180" width="10" height="10"/>
+        </g>
+        <path d="M324 150 l18 -30 l18 30" fill="none" stroke="#b4462f" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+        <rect x="332" y="150" width="20" height="22" rx="2" fill="#b4462f"/>
+        <g stroke="#3f7a54" stroke-width="3" fill="none" stroke-linecap="round">
+          <path d="M30 236 l0 -18 M30 226 l-10 -8 M30 226 l10 -8"/>
+        </g>
+        <rect x="140" y="232" width="34" height="22" rx="5" fill="#b4462f"/>
+        <rect x="146" y="236" width="10" height="7" rx="1.5" fill="#fff3e0"/>
+        <rect x="160" y="236" width="8" height="7" rx="1.5" fill="#fff3e0"/>
+        <circle cx="147" cy="256" r="4" fill="#2b2320"/>
+        <circle cx="167" cy="256" r="4" fill="#2b2320"/>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<div class="layout">
+  <main>
+
+    <!-- 领域概览 -->
+    <section class="section" id="overview">
+      <div class="section-head">
+        <h2>今日概览：返乡四个关键数</h2>
+        <a class="more" href="/#updates">更新于 11-07 18:00</a>
+      </div>
+      <p class="sec-note">数据来源为交通运输部路网中心 11 月 7 日 17:30 快报、12306 候补兑现率页面与浙北、赣中 4 家县城商超当日价签抽查。</p>
+      <div class="overview-grid">
+        <div class="ov-card">
+          <div class="k">高速公路拥堵指数</div>
+          <div class="v">1.42</div>
+          <div class="d">全国主要干线均值，比昨日 <b>高 0.08</b>；沪昆衢州段单点达 2.31。</div>
+        </div>
+        <div class="ov-card">
+          <div class="k">12306 候补兑现率</div>
+          <div class="v">71%</div>
+          <div class="d">11 月 6 日广州南—长沙南方向，<b>比上周同期升 9 个百分点</b>。</div>
+        </div>
+        <div class="ov-card">
+          <div class="k">县城年货价签</div>
+          <div class="v">+6.4%</div>
+          <div class="d">瓜子、腊肠、糖果三类合计，同比涨幅最高是腊肠 <b>11.2%</b>。</div>
+        </div>
+        <div class="ov-card">
+          <div class="k">后备箱装载上限</div>
+          <div class="v">4 箱</div>
+          <div class="d">紧凑型轿车后排坐满 3 人时，实测可稳放 <b>4 个 40×30×30cm</b> 纸箱。</div>
+        </div>
+        <div class="ov-card">
+          <div class="k">家乡气温差</div>
+          <div class="v">12℃</div>
+          <div class="d">深圳 24℃ 对比赣州 12℃，<b>落温差 12℃</b>，衣物按此分层打包。</div>
+        </div>
+        <div class="ov-card">
+          <div class="k">抢票最佳时段</div>
+          <div class="v">6:00</div>
+          <div class="d">起售 30 分钟内退票回流最集中，<b>11 月 5 日 6:12</b> 实测放票 214 张。</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 精选推荐 -->
+    <section class="section" id="features">
+      <div class="section-head">
+        <h2>精选内容推荐</h2>
+        <a class="more" href="/#channels">按频道浏览</a>
+      </div>
+      <div class="feature-grid">
+        <article class="feat-card">
+          <img src="https://picsum.photos/seed/hjkn-route01/640/300" width="640" height="300" loading="lazy" alt="沪昆高速衢州段傍晚车流与电子情报板">
+          <div class="feat-body">
+            <span class="chip">高速路况</span>
+            <h3>沪昆高速衢州段：下午 4 点后为何反而通了</h3>
+            <p>11 月 7 日 16:10 起，衢州东出口分流 38% 货车。16:40 主线路段车速从 21km/h 回到 63km/h，比导航预估早 25 分钟。</p>
+            <div class="feat-meta"><span>11-07 17:20</span><span>阅读 2 分钟</span></div>
+          </div>
+        </article>
+        <article class="feat-card">
+          <img src="https://picsum.photos/seed/hjkn-ticket02/640/300" width="640" height="300" loading="lazy" alt="手机屏幕上的12306候补订单页面">
+          <div class="feat-body">
+            <span class="chip green">抢票候补</span>
+            <h3>候补第 3 位和第 30 位，兑现几率差多少</h3>
+            <p>广州南—长沙南 11 月 6 日数据：候补顺位前 5 名兑现率 88%，30 名之后降到 34%。加开临客是主要变量。</p>
+            <div class="feat-meta"><span>11-06 21:05</span><span>阅读 3 分钟</span></div>
+          </div>
+        </article>
+        <article class="feat-card">
+          <img src="https://picsum.photos/seed/hjkn-market03/640/300" width="640" height="300" loading="lazy" alt="县城超市年货货架上的腊肠与糖果价签">
+          <div class="feat-body">
+            <span class="chip amber">年货采购</span>
+            <h3>腊肠每斤 42 元，比去年贵在哪一环</h3>
+            <p>赣中 4 家商超抽检：生猪收购价涨 3.1%，加工费涨 6 元/斤，包装成本几乎没动。价签差异集中在加工环节。</p>
+            <div class="feat-meta"><span>11-07 09:40</span><span>阅读 2 分钟</span></div>
+          </div>
+        </article>
+        <article class="feat-card">
+          <img src="https://picsum.photos/seed/hjkn-luggage04/640/300" width="640" height="300" loading="lazy" alt="汽车后备箱内整齐码放的纸箱和行李袋">
+          <div class="feat-body">
+            <span class="chip blue">行李打包</span>
+            <h3>后备箱 4 箱上限：紧凑型轿车的实测摆法</h3>
+            <p>后排坐 3 人时，40×30×30cm 纸箱横放 2 层最稳。再往上加第 5 箱，后视镜视线被挡 17 厘米。</p>
+            <div class="feat-meta"><span>11-05 14:30</span><span>阅读 4 分钟</span></div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- 最新更新 -->
+    <section class="section" id="updates">
+      <div class="section-head">
+        <h2>最新更新 · 路况与车次滚动播报</h2>
+        <a class="more" href="/#overview">返回概览</a>
+      </div>
+      <ul class="update-list">
+        <li>
+          <time datetime="2026-11-07T18:00">11-07 18:00</time>
+          <a class="u-title" href="/#deep">京港澳高速保定段拥堵回落至 1.8 公里，事故车已拖离</a>
+          <span class="u-tag">路况</span>
+        </li>
+        <li>
+          <time datetime="2026-11-07T16:40">11-07 16:40</time>
+          <a class="u-title" href="/#features">沪昆高速衢州东出口分流生效，主线车速回到 63km/h</a>
+          <span class="u-tag">路况</span>
+        </li>
+        <li>
+          <time datetime="2026-11-07T15:10">11-07 15:10</time>
+          <a class="u-title" href="/#deep">12306 加开广州南—武汉 4 趟夜间高铁，11 月 9 日起售</a>
+          <span class="u-tag">车次</span>
+        </li>
+        <li>
+          <time datetime="2026-11-07T12:25">11-07 12:25</time>
+          <a class="u-title" href="/#channels">赣中 4 家商超腊肠价签统一上调至 42 元/斤</a>
+          <span class="u-tag">年货</span>
+        </li>
+        <li>
+          <time datetime="2026-11-06T21:05">11-06 21:05</time>
+          <a class="u-title" href="/#features">候补兑现率升至 71%，前 5 顺位与 30 名后差距拉大</a>
+          <span class="u-tag">车次</span>
+        </li>
+        <li>
+          <time datetime="2026-11-06T09:30">11-06 09:30</time>
+          <a class="u-title" href="/#compare">雨雪预警：11 月 10 日皖北、苏北部分路段或有薄冰</a>
+          <span class="u-tag">天气</span>
+        </li>
+        <li>
+          <time datetime="2026-11-05T18:15">11-05 18:15</time>
+          <a class="u-title" href="/#guide">国省道绕行方案更新：G320 衢州段施工结束可通行</a>
+          <span class="u-tag">路况</span>
+        </li>
+      </ul>
+    </section>
+
+    <!-- 分类入口 -->
+    <section class="section" id="channels">
+      <div class="section-head">
+        <h2>分类入口 · 12 个返乡频道</h2>
+        <a class="more" href="/#tags">更多标签</a>
+      </div>
+      <div class="cat-index">
+        <a href="/#updates">高速实时路况<span>拥堵指数 · 分流方案</span></a>
+        <a href="/#features">春运抢票候补<span>顺位 · 兑现率 · 临客</span></a>
+        <a href="/#features">12306 放票时间<span>起售点 · 回流票</span></a>
+        <a href="/#features">年货采购清单<span>瓜子 · 腊肠 · 糖果</span></a>
+        <a href="/#compare">县城物价对照<span>同比 · 加工费</span></a>
+        <a href="/#guide">后备箱打包<span>纸箱尺寸 · 装载上限</span></a>
+        <a href="/#compare">家乡气候对照<span>落温差 · 衣物分层</span></a>
+        <a href="/#guide">自驾出发时间<span>早高峰 · 错峰</span></a>
+        <a href="/#faq">儿童与老人出行<span>晕车 · 座椅 · 证件</span></a>
+        <a href="/#rank">返乡路线榜单<span>耗时 · 过路费</span></a>
+        <a href="/#comments">返乡经验交流<span>实测 · 踩坑</span></a>
+        <a href="/#news">春运政策资讯<span>免费通行 · 安检</span></a>
+      </div>
+    </section>
+
+    <!-- 深度解析 -->
+    <section class="section" id="deep">
+      <div class="section-head">
+        <h2>深度解析：错峰出发到底省不省时间</h2>
+        <a class="more" href="/#guide">配套操作步骤</a>
+      </div>
+      <article class="deep">
+        <p class="lede">判断先行：在长三角到赣中这条 620 公里的返乡线上，提前 2 小时出发并不必然省时，决定总耗时的往往是“进入拥堵段的时间点”而非“出门的钟点”。下面用 11 月 5 日至 7 日三条实测记录拆开看。</p>
+
+        <h3><span class="idx">01</span>三条实测：早 2 小时未必早到</h3>
+        <p>11 月 6 日，杭州—赣州同一终点，三辆车分别于 5:30、7:00、9:30 出发。5:30 出发的车在衢州段遇上 6:40 至 8:10 的车流峰值，全程 9 小时 20 分；7:00 出发的车 7:50 进入衢州段时峰值刚开始，耗时 8 小时 50 分；9:30 出发的车全程 9 小时 05 分。三车到达时间分别是 14:50、15:50、18:35。</p>
+        <table>
+          <caption style="caption-side:bottom;font-size:12px;color:#8a7d75;text-align:left;padding-top:6px;">数据来自三辆车行车记录仪与导航轨迹，2026-11-06</caption>
+          <thead><tr><th>出发时间</th><th>进入衢州段时间</th><th>该段车速</th><th>总耗时</th></tr></thead>
+          <tbody>
+            <tr><td>5:30</td><td>6:40</td><td>21km/h</td><td><b>9 小时 20 分</b></td></tr>
+            <tr><td>7:00</td><td>7:50</td><td>34km/h</td><td>8 小时 50 分</td></tr>
+            <tr><td>9:30</td><td>10:20</td><td>58km/h</td><td>9 小时 05 分</td></tr>
+          </tbody>
+        </table>
+        <p>可复述的结论是：<strong>“避开拥堵段”比“提早出门”更有效</strong>。5:30 出发反而把车正好送进峰值，多花 30 分钟。反过来说，如果目的地较近、拥堵段在 200 公里内且能 6 点前通过，早出发仍然划算——这是结论的边界。</p>
+
+        <h3><span class="idx">02</span>候补顺位与临客：兑现率的两条曲线</h3>
+        <p>11 月 6 日广州南—长沙南的候补数据显示，顺位前 5 名兑现率 88%，6 至 15 名 67%，16 至 30 名 51%，30 名之后 34%。当日 14:20 加开 2 趟临客后，16 至 30 名这一段在 90 分钟内兑现率跳升 12 个百分点，前 5 名几乎不变。也就是说，<strong>临客主要救的是中段顺位</strong>，对已靠前的候补者影响有限。</p>
+        <blockquote>
+          “候补不是排队买票，是先占位再等系统配。顺位靠前的人，加开临客时反而抢不到新增运力，因为系统先满足的是中段集中分布。”
+          <cite>12306 客服 11 月 6 日电话答复要点（转述）</cite>
+        </blockquote>
+        <p>这一说法目前只得到客服口径支持，尚未见官方公告原文，属于转述层面。可核对的硬信息是 11 月 9 日起售的 4 趟夜间高铁，以及 14:20 加开后中段兑现率的跳升幅度。</p>
+
+        <h3><span class="idx">03</span>年货价签：涨的是加工费，不是原料</h3>
+        <p>赣中 4 家商超 11 月 7 日价签：腊肠 42 元/斤，去年同期 37.8 元；瓜子 13.5 元/斤，去年 12.9 元；散装糖果 18 元/斤，去年 17.4 元。拆开看，生猪收购价同比涨 3.1%，折算到腊肠约 0.6 元；加工费从 8 元/斤涨到 14 元/斤，贡献 6 元；包装与标签合计涨 0.3 元。三项相加 6.9 元，接近实际涨幅 4.2 元——中间差的 2.7 元来自商超自主加价，这一段属于推测，需要门店采购单才能坐实。</p>
+        <p>对采购的具体建议是：腊肠在 11 月 15 日前买，多数门店第二波调价集中在腊月中旬；瓜子和糖果价差小，不必囤，按 3 天吃完的量买即可。</p>
+
+        <h3><span class="idx">04</span>天气变量的核对方法</h3>
+        <p>11 月 10 日皖北、苏北有薄冰可能，具体落区要看 11 月 8 日 20:00 的中央气象台短时预报。核对顺序是：先看高速交警支队微博的封路公告，再看导航“前方 50 公里路况”，最后才参考天气 App 的降水概率。三个信源里，封路公告优先级最高，因为它直接决定能不能走。</p>
+      </article>
+    </section>
+
+    <!-- 体验指南 -->
+    <section class="section" id="guide">
+      <div class="section-head">
+        <h2>体验指南：出发前 6 个动作</h2>
+        <a class="more" href="/#faq">常见疑问</a>
+      </div>
+      <ol class="steps">
+        <li><b>T-7 天：锁定车次或拼车</b>12306 起售前 5 分钟登录，候补顺位进前 15 名的概率最高。拼车则先确认对方是否走 G60 而不是 G56，路线不同耗时会差 1 小时以上。</li>
+        <li><b>T-3 天：查拥堵段并倒推出发时间</b>以衢州段为例，11 月 6 日峰值在 6:40—8:10。若不想进峰值，出发时间应定在 6:20 前或 8:30 后。</li>
+        <li><b>T-2 天：按落温差打包衣物</b>深圳 24℃ 到赣州 12℃，中间差 12℃。内层短袖 2 件，中层抓绒 1 件，外层防风 1 件，比带 4 件厚外套更省空间。</li>
+        <li><b>T-1 天：后备箱按 4 箱上限试装</b>40×30×30cm 纸箱横放 2 层，第 3 层只放软包。装完后从驾驶位看后视镜，被挡高度不超过 10 厘米。</li>
+        <li><b>出发当天：6:00 前完成加油与如厕</b>服务区 7:00—9:00 排队最长，衢州服务区 11 月 6 日 7:40 加油排队 22 分钟，6:10 只需 4 分钟。</li>
+        <li><b>途中：每 90 分钟核对一次导航路线</b>导航重新规划通常在分流点前 3 公里提示。看到“前方拥堵 8 公里”时立刻决定是否下高速，晚了就下不去。</li>
+      </ol>
+    </section>
+
+    <!-- 对照面板 -->
+    <section class="section" id="compare">
+      <div class="section-head">
+        <h2>自驾与高铁：两条返乡路径对照</h2>
+        <a class="more" href="/#rank">看路线榜单</a>
+      </div>
+      <div class="compare">
+        <div>
+          <h4><span class="pt g"></span>自驾 · 杭州到赣州 620 公里</h4>
+          <ul>
+            <li>耗时：8 小时 50 分至 9 小时 20 分，取决于是否进衢州峰值</li>
+            <li>过路费：约 285 元，11 月 7 日 ETC 实扣 281.4 元</li>
+            <li>油费：按 7.6 元/升、百公里 7.2 升计，约 339 元</li>
+            <li>优势：后备箱 4 箱年货可带，老人小孩中途可停</li>
+            <li>风险：11 月 10 日皖北薄冰，需看封路公告</li>
+          </ul>
+        </div>
+        <div>
+          <h4><span class="pt r"></span>高铁 · 杭州东到赣州西</h4>
+          <ul>
+            <li>耗时：4 小时 12 分至 5 小时 40 分，看是否中转</li>
+            <li>票价：二等座 396.5 元，11 月 6 日余票 3 张</li>
+            <li>行李：每人 20 公斤，4 箱年货需托运或快递</li>
+            <li>优势：准点率高，11 月 6 日 G 字头准点率 97.8%</li>
+            <li>风险：候补兑现率 71%，30 名后只剩 34%</li>
+          </ul>
+        </div>
+      </div>
+      <p class="sec-note" style="margin-top:12px;">换算口径：自驾按 2 人分摊，单人成本约 312 元；高铁单人 396.5 元。带 4 箱年货时，自驾总成本反而更低，这是 11 月 6 日实测的结果。</p>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section" id="faq">
+      <div class="section-head">
+        <h2>常见问题</h2>
+        <a class="more" href="/#comments">看别人怎么问</a>
+      </div>
+      <div class="faq">
+        <details open>
+          <summary>候补顺位第 20 名，还有必要等吗？</summary>
+          <div class="faq-body">要看方向。广州南—长沙南 11 月 6 日的 16 至 30 名兑现率是 51%，临客加开后升到 63%，等待仍有意义；但同一时段杭州东—赣州西的 16 至 30 名只有 38%，因为该线当天没有加开临客。判断方法是查 12306 公告里有没有“加开”二字，没有就尽早改签。</div>
+        </details>
+        <details>
+          <summary>高速免费通行从哪天开始，11 月 7 日算不算？</summary>
+          <div class="faq-body">高速免费通行按春节假期执行，2026 年 11 月的返乡行程不在免费范围。11 月 7 日杭州到赣州仍按正常标准收费，ETC 实扣 281.4 元。免费时段的官方口径以国务院办公厅假期安排为准，出发前 3 天再核对一次。</div>
+        </details>
+        <details>
+          <summary>带 3 岁小孩自驾 9 小时，中途要停几次？</summary>
+          <div class="faq-body">按 90 分钟一停，620 公里需停 5 至 6 次，每次 15 分钟。11 月 6 日实测，带小孩的车平均比不带小孩多耗时 1 小时 10 分。安全座椅必须固定在后排，衢州段 21km/h 的缓行车速下急刹仍会发生，别让孩子坐副驾。</div>
+        </details>
+        <details>
+          <summary>腊肠现在买会不会坏在路上？</summary>
+          <div class="faq-body">11 月 7 日赣中气温 12℃ 至 19℃，腊肠在车内 9 小时问题不大，但后备箱温度会高 5℃ 左右。稳妥做法是用保温袋加 2 个冰袋，到家后挂通风处 3 天再冷藏。如果行程超过 12 小时，建议到家再买，价差不超过 1.5 元/斤。</div>
+        </details>
+        <details>
+          <summary>导航显示前方拥堵 8 公里，要不要立刻下高速？</summary>
+          <div class="faq-body">看出口距离和地面道路状况。若出口在 3 公里内、平行国省道导航耗时比高速少 20 分钟以上，就下；否则继续走。11 月 7 日衢州东出口分流 38% 货车后主线反而通了，说明有时“等一等”比“绕一绕”快。判断依据是分流公告，不是拥堵长度本身。</div>
+        </details>
+      </div>
+    </section>
+
+    <!-- 用户评论 -->
+    <section class="section" id="comments">
+      <div class="section-head">
+        <h2>返乡经验交流</h2>
+        <a class="more" href="/#tags">相关推荐</a>
+      </div>
+      <div class="comments">
+        <div class="cmt">
+          <div class="avatar" aria-hidden="true">周</div>
+          <div>
+            <div class="who"><b>周师傅_货运</b><span>11-07 17:52</span><span>跑沪昆 8 年</span></div>
+            <p>衢州东出口那个分流是真的有用。今天 16:20 我过的时候主线还压着，16:50 再走一段就顺了。但有个问题没人提：分流下去走 G320，到常山那段有 3 个红绿灯，货车一多照样堵，别以为下了高速就万事大吉。</p>
+            <div class="quote">指向条目：沪昆高速衢州段 11-07 16:40 分流播报</div>
+          </div>
+        </div>
+        <div class="cmt">
+          <div class="avatar" aria-hidden="true">林</div>
+          <div>
+            <div class="who"><b>林小满</b><span>11-07 15:08</span></div>
+            <p>候补那个 88% 和 34% 的对比数据，我按自己的单子验证了一下：顺位第 4，昨天下午兑现了；同事顺位第 27，现在还没动静。加开临客那 4 趟夜间高铁我查了，确实 11 月 9 日才起售，今天买不到。</p>
+          </div>
+        </div>
+        <div class="cmt">
+          <div class="avatar" aria-hidden="true">老</div>
+          <div>
+            <div class="who"><b>老陈不熬夜</b><span>11-07 13:30</span><span>赣州本地</span></div>
+            <p>腊肠 42 元/斤这个价，我们县城超市上周还是 39.8。涨得有点快。加工费涨 6 块的说法我信一半，因为我家亲戚就是做腊肠的，他说今年猪肉其实没怎么涨，反倒是人工和肠衣贵了。这条如果能有采购单就更实了。</p>
+            <div class="quote">指向条目：深度解析第 03 节 腊肠价签拆解</div>
+          </div>
+        </div>
+        <div class="cmt">
+          <div class="avatar" aria-hidden="true">K</div>
+          <div>
+            <div class="who"><b>Kevin_在深</b><span>11-07 11:14</span></div>
+            <p>后备箱 4 箱上限这个我持保留意见。我车是 SUV，后排坐 2 人，实际塞了 5 箱加两个袋子。文章说的是紧凑型轿车后排坐满 3 人，前提不一样，别直接套。建议把车型条件写大一点。</p>
+            <div class="quote">指向条目：精选推荐 后备箱 4 箱上限实测</div>
+          </div>
+        </div>
+        <div class="cmt">
+          <div class="avatar" aria-hidden="true">阿</div>
+          <div>
+            <div class="who"><b>阿禾</b><span>11-06 22:41</span></div>
+            <p>说实话我不太理解提前 2 小时出发反而慢这件事，感觉像事后挑数据。5:30 那辆车是不是路上还停了？如果没有停，这个结论我认；停了就不算数。希望把三辆车的停靠次数也列出来。</p>
+            <div class="quote">指向条目：深度解析第 01 节 三条实测</div>
+          </div>
+        </div>
+        <div class="cmt">
+          <div class="avatar" aria-hidden="true">秋</div>
+          <div>
+            <div class="who"><b>秋天的第一杯</b><span>11-06 20:17</span></div>
+            <p>90 分钟一停这条对带娃家庭很实用。我们上次 5 小时只停了一次，小孩在后排闹得不行。不过服务区 7:40 排队 22 分钟这个数据，是衢州服务区，别的服务区不一定一样，别当成通用值。</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 相关资讯 -->
+    <section class="section" id="news">
+      <div class="section-head">
+        <h2>相关资讯</h2>
+        <a class="more" href="/#channels">频道索引</a>
+      </div>
+      <div class="news-grid">
+        <article class="news-item">
+          <div class="n-meta">交通运输部 · 11-07</div>
+          <h3>全国干线公路网 11 月 7 日运行快报</h3>
+          <p>主要干线拥堵指数均值 1.42，沪昆、京港澳两条通道贡献了 6 成以上拥堵里程。</p>
+        </article>
+        <article class="news-item">
+          <div class="n-meta">中国铁路 · 11-07</div>
+          <h3>广州南至武汉加开 4 趟夜间高铁</h3>
+          <p>11 月 9 日起售，开行日期为 11 月 12 日至 15 日，二等座票价与图定车次一致。</p>
+        </article>
+        <article class="news-item">
+          <div class="n-meta">中央气象台 · 11-06</div>
+          <h3>皖北苏北 11 月 10 日或出现薄冰</h3>
+          <p>落区集中在淮河以北，具体范围以 11 月 8 日 20:00 短时预报为准。</p>
+        </article>
+        <article class="news-item">
+          <div class="n-meta">赣中商超联合抽查 · 11-07</div>
+          <h3>腊肠、瓜子、糖果三类年货价签同比上涨</h3>
+          <p>腊肠涨幅 11.2% 居首，加工费是主要推动项，原料涨幅仅 3.1%。</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- 榜单 -->
+    <section class="section" id="rank">
+      <div class="section-head">
+        <h2>返乡路线榜单 · 按总耗时排</h2>
+        <a class="more" href="/#compare">对照面板</a>
+      </div>
+      <ol class="rank-list">
+        <li><span class="rk">1</span><span><span class="r-name">杭州东—赣州西 高铁直达</span><br><span class="r-sub">G1355 次，11-06 准点率 97.8%</span></span><span class="r-val">4 小时 12 分</span></li>
+        <li><span class="rk">2</span><span><span class="r-name">上海虹桥—合肥南 高铁</span><br><span class="r-sub">G7248 次，二等座 198 元</span></span><span class="r-val">2 小时 05 分</span></li>
+        <li><span class="rk">3</span><span><span class="r-name">杭州—赣州 自驾 G60 沪昆</span><br><span class="r-sub">620 公里，避开衢州峰值</span></span><span class="r-val">8 小时 50 分</span></li>
+        <li><span class="rk">4</span><span><span class="r-name">深圳北—赣州西 高铁</span><br><span class="r-sub">G6302 次，11-06 余票 11 张</span></span><span class="r-val">2 小时 38 分</span></li>
+        <li><span class="rk">5</span><span><span class="r-name">广州南—长沙南 高铁</span><br><span class="r-sub">候补兑现率 71%</span></span><span class="r-val">2 小时 22 分</span></li>
+      </ol>
+    </section>
+
+    <!-- 相关推荐 -->
+    <section class="section" id="tags">
+      <div class="section-head">
+        <h2>相关推荐</h2>
+        <a class="more" href="/#overview">回到顶部概览</a>
+      </div>
+      <div class="tags">
+        <a href="/#updates">高速实时拥堵指数<span class="n">28 条</span></a>
+        <a href="/#features">春运候补兑现率<span class="n">4 档</span></a>
+        <a href="/#features">12306 起售时间表<span class="n">14 站</span></a>
+        <a href="/#compare">县城年货价签对照<span class="n">4 家</span></a>
+        <a href="/#guide">后备箱装载上限实测<span class="n">3 车型</span></a>
+        <a href="/#compare">家乡落温差与衣物分层<span class="n">6 城</span></a>
+        <a href="/#rank">返乡路线耗时榜<span class="n">5 条</span></a>
+        <a href="/#faq">儿童安全座椅与长途停车<span class="n">5 问</span></a>
+      </div>
+    </section>
+
+  </main>
+
+  <aside aria-label="侧栏">
+    <div class="side-card">
+      <h3>本页目录</h3>
+      <ul class="side-nav" id="sideNav">
+        <li><a href="/#overview">今日概览</a></li>
+        <li><a href="/#features">精选内容推荐</a></li>
+        <li><a href="/#updates">最新更新</a></li>
+        <li><a href="/#channels">分类入口</a></li>
+        <li><a href="/#deep">深度解析</a></li>
+        <li><a href="/#guide">体验指南</a></li>
+        <li><a href="/#compare">路径对照</a></li>
+        <li><a href="/#faq">常见问题</a></li>
+        <li><a href="/#comments">返乡经验交流</a></li>
+        <li><a href="/#news">相关资讯</a></li>
+        <li><a href="/#rank">路线榜单</a></li>
+      </ul>
+    </div>
+    <div class="side-card">
+      <h3>今日关键数</h3>
+      <ul class="side-kv">
+        <li><span>拥堵指数均值</span><b>1.42</b></li>
+        <li><span>候补兑现率</span><b>71%</b></li>
+        <li><span>腊肠价签</span><b>42 元/斤</b></li>
+        <li><span>衢州段车速</span><b>63km/h</b></li>
+        <li><span>后备箱上限</span><b>4 箱</b></li>
+        <li><span>落温差</span><b>12℃</b></li>
+      </ul>
+    </div>
+    <div class="side-card">
+      <h3>热门标签</h3>
+      <div class="side-tags">
+        <a href="/#features">候补顺位</a>
+        <a href="/#updates">衢州分流</a>
+        <a href="/#compare">加工费</a>
+        <a href="/#guide">90 分钟一停</a>
+        <a href="/#compare">薄冰预警</a>
+        <a href="/#rank">准点率</a>
+      </div>
+    </div>
+    <div class="side-card tip">
+      <b>出发前核对顺序：</b>封路公告 → 高速交警微博 → 导航前方 50 公里路况 → 天气 App 降水概率。前两项决定“能不能走”，后两项只影响“怎么走”。
+    </div>
+  </aside>
+</div>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div class="fname">
+          <svg viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" rx="14" fill="#b4462f"/><path d="M13 35 L32 17 L51 35" fill="none" stroke="#fff3e0" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/><rect x="22" y="35" width="20" height="17" rx="2" fill="#fff3e0"/></svg>
+          回家今日看料
+        </div>
+        <p>把返乡拆成路况、车次、年货、行李四件事，每件都给可核对的数字和日期，不给模糊建议。</p>
+        <p style="font-size:12px;color:#8f837a;">示例数据说明：页面内车次、价签、车速、候补顺位为演示用示例条目，非官方发布；引用平台与日期用于说明数据层级，请以现场与官方渠道为准。</p>
+      </div>
+      <div class="footer-col">
+        <h4>路况与车次</h4>
+        <ul>
+          <li><a href="/#updates">高速实时路况</a></li>
+          <li><a href="/#features">春运抢票候补</a></li>
+          <li><a href="/#compare">自驾与高铁对照</a></li>
+          <li><a href="/#rank">返乡路线榜单</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>年货与打包</h4>
+        <ul>
+          <li><a href="/#features">年货采购清单</a></li>
+          <li><a href="/#compare">县城物价对照</a></li>
+          <li><a href="/#guide">后备箱打包</a></li>
+          <li><a href="/#guide">家乡气候对照</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>答疑与交流</h4>
+        <ul>
+          <li><a href="/#faq">常见问题</a></li>
+          <li><a href="/#comments">返乡经验交流</a></li>
+          <li><a href="/#news">春运政策资讯</a></li>
+          <li><a href="/#tags">相关推荐</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 回家今日看料 · 内容为示例编排，仅供返乡准备参考</span>
+      <span class="upd">页脚更新时间 2026-11-07 18:00，对应正文播报第 1 条与概览四项数字</span>
+    </div>
+  </div>
+</footer>
+
+<button id="toTop" aria-label="回到顶部">
+  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V6M6 12l6-6 6 6"/></svg>
+</button>
+
+<script>
+(function(){
+  "use strict";
+
+  /* 移动端菜单 */
+  var menuBtn = document.getElementById('menuBtn');
+  var mainNav = document.getElementById('mainNav');
+  if(menuBtn && mainNav){
+    menuBtn.addEventListener('click', function(){
+      var open = mainNav.classList.toggle('open');
+      menuBtn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+    mainNav.addEventListener('click', function(e){
+      if(e.target.tagName === 'A' && window.innerWidth <= 820){
+        mainNav.classList.remove('open');
+        menuBtn.setAttribute('aria-expanded','false');
+      }
+    });
+  }
+
+  /* 本地搜索 */
+  var input = document.getElementById('siteSearch');
+  var btn = document.getElementById('searchBtn');
+  var fb = document.getElementById('searchFeedback');
+
+  function runSearch(){
+    var q = (input.value || '').trim();
+    if(!q){
+      fb.classList.add('show');
+      fb.textContent = '请输入关键词，例如：衢州、候补、腊肠、后备箱。';
+      return;
+    }
+    var bodyText = document.body.innerText || '';
+    var hit = bodyText.indexOf(q) !== -1;
+    fb.classList.add('show');
+    if(hit){
+      var first = bodyText.indexOf(q);
+      fb.innerHTML = '找到与“<b>' + escapeHtml(q) + '</b>”相关的内容，可在页内搜索框旁继续浏览对应板块。';
+    }else{
+      fb.textContent = '没有找到“' + q + '”的相关内容。试试“衢州”“候补顺位”“腊肠价签”“后备箱”“薄冰”。';
+    }
+  }
+  function escapeHtml(s){
+    return s.replace(/[&<>"']/g, function(c){
+      return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c];
+    });
+  }
+  if(btn){ btn.addEventListener('click', runSearch); }
+  if(input){
+    input.addEventListener('keydown', function(e){
+      if(e.key === 'Enter'){ e.preventDefault(); runSearch(); }
+    });
+  }
+  document.addEventListener('click', function(e){
+    if(fb && fb.classList.contains('show')){
+      if(!e.target.closest('.search-box') && e.target !== fb){
+        fb.classList.remove('show');
+      }
+    }
+  });
+
+  /* 回到顶部 */
+  var toTop = document.getElementById('toTop');
+  window.addEventListener('scroll', function(){
+    if(window.scrollY > 480){
+      toTop.classList.add('show');
+    }else{
+      toTop.classList.remove('show');
+    }
+  }, {passive:true});
+  toTop.addEventListener('click', function(){
+    window.scrollTo({top:0, behavior:'smooth'});
+  });
+
+  /* 侧栏导航高亮 */
+  var sections = Array.prototype.slice.call(document.querySelectorAll('main .section[id]'));
+  var sideLinks = Array.prototype.slice.call(document.querySelectorAll('#sideNav a'));
+  if('IntersectionObserver' in window && sections.length){
+    var obs = new IntersectionObserver(function(entries){
+      entries.forEach(function(en){
+        if(en.isIntersecting){
+          var id = en.target.id;
+          sideLinks.forEach(function(a){
+            a.classList.toggle('active', a.getAttribute('href') === '/#' + id);
+          });
+        }
+      });
+    }, {rootMargin: '-45% 0px -50% 0px', threshold: 0});
+    sections.forEach(function(s){ obs.observe(s); });
+  }
+})();
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "回家今日看料",
+  "description": "聚焦春节返乡的路况、车次、年货与行李打包，提供可核对的日期与数字。",
+  "inLanguage": "zh-CN"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "候补顺位第 20 名，还有必要等吗？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "要看方向。广州南—长沙南 11 月 6 日的 16 至 30 名兑现率是 51%，临客加开后升到 63%，等待仍有意义；但同一时段杭州东—赣州西的 16 至 30 名只有 38%，因为该线当天没有加开临客。判断方法是查 12306 公告里有没有加开公告。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "高速免费通行从哪天开始，11 月 7 日算不算？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "高速免费通行按春节假期执行，2026 年 11 月的返乡行程不在免费范围。11 月 7 日杭州到赣州仍按正常标准收费，ETC 实扣 281.4 元。免费时段的官方口径以国务院办公厅假期安排为准。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "带 3 岁小孩自驾 9 小时，中途要停几次？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "按 90 分钟一停，620 公里需停 5 至 6 次，每次 15 分钟。11 月 6 日实测，带小孩的车平均比不带小孩多耗时 1 小时 10 分。安全座椅必须固定在后排，不要让孩子坐副驾。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "腊肠现在买会不会坏在路上？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "11 月 7 日赣中气温 12℃ 至 19℃，腊肠在车内 9 小时问题不大，但后备箱温度会高 5℃ 左右。可用保温袋加 2 个冰袋，到家后挂通风处 3 天再冷藏。如果行程超过 12 小时，建议到家再买。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "导航显示前方拥堵 8 公里，要不要立刻下高速？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "看出口距离和地面道路状况。若出口在 3 公里内、平行国省道导航耗时比高速少 20 分钟以上，就下；否则继续走。11 月 7 日衢州东出口分流 38% 货车后主线反而通了，判断依据是分流公告，不是拥堵长度本身。"
+      }
+    }
+  ]
+}
+</script>
+</body>
+  </html>
